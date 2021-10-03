@@ -6,35 +6,35 @@ public class GruppeMerkmal implements IGruppeMerkmal {
     private String schluessel;
     private String wert;
 
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
-    public int GetGruppeIdentifier() {
+    public int getGruppeIdentifier() {
         return this.gruppeIdentifier;
     }
 
-    public void SetGruppeIdentifier(int gruppeIdentifier) {
+    public void setGruppeIdentifier(int gruppeIdentifier) {
         this.gruppeIdentifier = gruppeIdentifier;
     }
 
-    public String GetSchluessel() {
+    public String getSchluessel() {
         return this.schluessel;
     }
 
-    public void SetSchluessel(String schluessel) {
+    public void setSchluessel(String schluessel) {
         this.schluessel = schluessel;
     }
 
-    public String GetWert() {
+    public String getWert() {
         return this.wert;
     }
 
-    public void SetWert(String wert) {
+    public void setWert(String wert) {
         this.wert = wert;
     }
 }

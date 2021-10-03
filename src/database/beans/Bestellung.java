@@ -16,132 +16,132 @@ public class Bestellung implements IBestellung {
     private String zustand;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetKundeIdentifier() {
+    public int getKundeIdentifier() {
         return this.kundeIdentifier;
     }
 
     @Override
-    public void SetKundeIdentifier(int kundeIdentifier) {
+    public void setKundeIdentifier(int kundeIdentifier) {
         this.kundeIdentifier = kundeIdentifier;
     }
 
     @Override
-    public String GetEmpfaengerName() {
+    public String getEmpfaengerName() {
         return this.empfaengerName;
     }
 
     @Override
-    public void SetEmpfaengerName(String empfaengerName) {
+    public void setEmpfaengerName(String empfaengerName) {
         this.empfaengerName = empfaengerName;
     }
 
     @Override
-    public String GetEmpfaengerVorname() {
+    public String getEmpfaengerVorname() {
         return this.empfaengerVorname;
     }
 
     @Override
-    public void SetEmpfaengerVorname(String empfaengerVorname) {
+    public void setEmpfaengerVorname(String empfaengerVorname) {
         this.empfaengerVorname = empfaengerVorname;
     }
 
     @Override
-    public String GetEmpfaengerAddresse() {
+    public String getEmpfaengerAddresse() {
         return this.empfaengerAddresse;
     }
 
     @Override
-    public void SetEmpfaengerAddresse(String empfaengerAddresse) {
+    public void setEmpfaengerAddresse(String empfaengerAddresse) {
         this.empfaengerAddresse = empfaengerAddresse;
     }
 
     @Override
-    public String GetEmpfaengerPostleitzahl() {
+    public String getEmpfaengerPostleitzahl() {
         return this.empfaengerPostleitzahl;
     }
 
     @Override
-    public void SetEmpfaengerPostleitzahl(String empfaengerPostleitzahl) {
+    public void setEmpfaengerPostleitzahl(String empfaengerPostleitzahl) {
         this.empfaengerPostleitzahl = empfaengerPostleitzahl;
     }
 
     @Override
-    public String GetEmpfaengerOrt() {
+    public String getEmpfaengerOrt() {
         return this.empfaengerOrt;
     }
 
     @Override
-    public void SetEmpfaengerOrt(String empfaengerOrt) {
+    public void setEmpfaengerOrt(String empfaengerOrt) {
         this.empfaengerOrt = empfaengerOrt;
     }
 
     @Override
-    public String GetEmpfaengerZahlungsArt() {
+    public String getEmpfaengerZahlungsArt() {
         return this.empfaengerZahlungsArt;
     }
 
     @Override
-    public void SetEmpfaengerZahlungsArt(String empfaengerZahlungsArt) {
+    public void setEmpfaengerZahlungsArt(String empfaengerZahlungsArt) {
         this.empfaengerZahlungsArt = empfaengerZahlungsArt;
     }
 
     @Override
-    public String GetEmpfaengerNummerKreditkarte() {
+    public String getEmpfaengerNummerKreditkarte() {
         return this.empfaengerNummerKreditkarte;
     }
 
     @Override
-    public void SetEmpfaengerNummerKreditkarte(String empfaengerNummerKreditkarte) {
+    public void setEmpfaengerNummerKreditkarte(String empfaengerNummerKreditkarte) {
         this.empfaengerNummerKreditkarte = empfaengerNummerKreditkarte;
     }
 
     @Override
-    public String GetEmpfaengerVerfallKreditkarte() {
+    public String getEmpfaengerVerfallKreditkarte() {
         return this.empfaengerVerfallKreditkarte;
     }
 
     @Override
-    public void SetEmpfaengerVerfallKreditkarte(String empfaengerVerfallKreditkarte) {
+    public void setEmpfaengerVerfallKreditkarte(String empfaengerVerfallKreditkarte) {
         this.empfaengerVerfallKreditkarte = empfaengerVerfallKreditkarte;
     }
 
     @Override
-    public int GetDatumBestellung() {
+    public int getDatumBestellung() {
         return this.datumBestellung;
     }
 
     @Override
-    public void SetDatumBestellung(int datumBestellung) {
+    public void setDatumBestellung(int datumBestellung) {
         this.datumBestellung = datumBestellung;
     }
 
     @Override
-    public int GetDatumAuslieferung() {
+    public int getDatumAuslieferung() {
         return this.datumAuslieferung;
     }
 
     @Override
-    public void SetDatumAuslieferung(int datumAuslieferung) {
+    public void setDatumAuslieferung(int datumAuslieferung) {
         this.datumAuslieferung = datumAuslieferung;
     }
 
     @Override
-    public String GetZustand() {
+    public String getZustand() {
         return this.zustand;
     }
 
     @Override
-    public void SetZustand(String Zustand) {
+    public void setZustand(String Zustand) {
         this.zustand = Zustand;
     }
 }

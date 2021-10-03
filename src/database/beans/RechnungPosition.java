@@ -11,72 +11,72 @@ public class RechnungPosition implements  IRechnungPosition{
     private int preisProEinheit;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetRechnungIdentifier() {
+    public int getRechnungIdentifier() {
         return this.rechnungIdentifier;
     }
 
     @Override
-    public void SetRechnungIdentifier(int rechnungIdentifier) {
+    public void setRechnungIdentifier(int rechnungIdentifier) {
         this.rechnungIdentifier = rechnungIdentifier;
     }
 
     @Override
-    public int GetBeschreibung() {
+    public int getBeschreibung() {
         return this.beschreibung;
     }
 
     @Override
-    public void SetBeschreibung(int beschreibung) {
+    public void setBeschreibung(int beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     @Override
-    public int GetArtikelNummer() {
+    public int getArtikelNummer() {
         return this.artikelNummer;
     }
 
     @Override
-    public void SetArtikelNummer(int artikelNummer) {
+    public void setArtikelNummer(int artikelNummer) {
         this.artikelNummer = artikelNummer;
     }
 
     @Override
-    public int GetReihenfolge() {
+    public int getReihenfolge() {
         return this.reihenfolge;
     }
 
     @Override
-    public void SetReihenfolge(int reihenfolge) {
+    public void setReihenfolge(int reihenfolge) {
         this.reihenfolge = reihenfolge;
     }
 
     @Override
-    public int GetAnzahlEinheiten() {
+    public int getAnzahlEinheiten() {
         return this.anzahlEinheiten;
     }
 
     @Override
-    public void SetAnzahlEinheiten(int anzahlEinheiten) {
+    public void setAnzahlEinheiten(int anzahlEinheiten) {
         this.anzahlEinheiten = anzahlEinheiten;
     }
 
     @Override
-    public int GetPreisProEinheit() {
+    public int getPreisProEinheit() {
         return this.preisProEinheit;
     }
 
     @Override
-    public void SetPreisProEinheit(int preisProEinheit) {
+    public void setPreisProEinheit(int preisProEinheit) {
         this.preisProEinheit = preisProEinheit;
     }
 }

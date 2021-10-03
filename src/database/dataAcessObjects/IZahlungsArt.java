@@ -1,6 +1,6 @@
 package database.dataAcessObjects;
 
 public interface IZahlungsArt {
-    database.beans.IZahlungsArt Read(int identifier);
-    void Update(database.beans.IZahlungsArt zahlungsArt);
+    database.beans.IZahlungsArt read(int identifier);
+    void overwrite(database.beans.IZahlungsArt zahlungsArt);
 }

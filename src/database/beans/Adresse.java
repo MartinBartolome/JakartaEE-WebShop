@@ -8,52 +8,52 @@ public class Adresse implements IAdresse {
     private String ort;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetKundeIdentifier() {
+    public int getKundeIdentifier() {
         return this.kundeIdentifier;
     }
 
     @Override
-    public void SetKundeIdentifier(int kundeIdentifier) {
+    public void setKundeIdentifier(int kundeIdentifier) {
         this.kundeIdentifier = kundeIdentifier;
     }
 
     @Override
-    public String GetStrasse() {
+    public String getStrasse() {
         return this.strasse;
     }
 
     @Override
-    public void SetStrasse(String strasse) {
+    public void setStrasse(String strasse) {
         this.strasse = strasse;
     }
 
     @Override
-    public String GetPostleitzahl() {
+    public String getPostleitzahl() {
         return this.postleitzahl;
     }
 
     @Override
-    public void SetPostleitzahl(String postleitzahl) {
+    public void setPostleitzahl(String postleitzahl) {
         this.postleitzahl = postleitzahl;
     }
 
     @Override
-    public String GetOrt() {
+    public String getOrt() {
         return this.ort;
     }
 
     @Override
-    public void SetOrt(String ort) {
+    public void setOrt(String ort) {
         this.ort = ort;
     }
 }

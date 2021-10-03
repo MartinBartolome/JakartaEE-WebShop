@@ -8,52 +8,52 @@ public class BestellungPositionMerkmal implements IBestellungPositionMerkmal {
     private String wert;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetBestellungPositionIdentifier() {
+    public int getBestellungPositionIdentifier() {
         return this.bestellungPositionIdentifier;
     }
 
     @Override
-    public void SetBestellungPositionIdentifier(int bestellungPositionIdentifier) {
+    public void setBestellungPositionIdentifier(int bestellungPositionIdentifier) {
         this.bestellungPositionIdentifier = bestellungPositionIdentifier;
     }
 
     @Override
-    public int GetBeschreibung() {
+    public int getBeschreibung() {
         return this.beschreibung;
     }
 
     @Override
-    public void SetBeschreibung(int beschreibung) {
+    public void setBeschreibung(int beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     @Override
-    public String GetSchluessel() {
+    public String getSchluessel() {
         return this.schluessel;
     }
 
     @Override
-    public void SetSchluessel(String schluessel) {
+    public void setSchluessel(String schluessel) {
         this.schluessel = schluessel;
     }
 
     @Override
-    public String GetWert() {
+    public String getWert() {
         return this.wert;
     }
 
     @Override
-    public void SetWert(String wert) {
+    public void setWert(String wert) {
         this.wert = wert;
     }
 }

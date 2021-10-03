@@ -1,12 +1,12 @@
 package database.beans;
 
 public interface ILagerbestand {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetLagerIdentifier();
-    void SetLagerIdentifier(int lagerIdentifier);
-    int GetArtikelIdentifier();
-    void SetArtikelIdentifier(int artikelIdentifier);
-    float GetVerfuegbareEinheiten();
-    void SetVerfuegbareEinheiten(float verfuegbareEinheiten);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getLagerIdentifier();
+    void setLagerIdentifier(int lagerIdentifier);
+    int getArtikelIdentifier();
+    void setArtikelIdentifier(int artikelIdentifier);
+    float getVerfuegbareEinheiten();
+    void setVerfuegbareEinheiten(float verfuegbareEinheiten);
 }

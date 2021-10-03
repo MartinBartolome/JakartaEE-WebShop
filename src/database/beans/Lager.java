@@ -5,22 +5,22 @@ public class Lager implements ILager {
     private String beschreibung;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public String GetBeschreibung() {
+    public String getBeschreibung() {
         return this.beschreibung;
     }
 
     @Override
-    public void SetBeschreibung(String beschreibung) {
+    public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 }

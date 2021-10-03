@@ -8,52 +8,52 @@ public class ZahlungsArt implements  IZahlungsArt {
     private String verfallKreditkarte;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetKundeIdentifier() {
+    public int getKundeIdentifier() {
         return this.kundeIdentifier;
     }
 
     @Override
-    public void SetKundeIdentifier(int kundeIdentifier) {
+    public void setKundeIdentifier(int kundeIdentifier) {
         this.kundeIdentifier = kundeIdentifier;
     }
 
     @Override
-    public int GetZahlungsArt() {
+    public int getZahlungsArt() {
         return this.zahlungsArt;
     }
 
     @Override
-    public void SetZahlungsArt(int zahlungsArt) {
+    public void setZahlungsArt(int zahlungsArt) {
         this.zahlungsArt = zahlungsArt;
     }
 
     @Override
-    public String GetNummerKreditkarte() {
+    public String getNummerKreditkarte() {
         return this.nummerKreditkarte;
     }
 
     @Override
-    public void SetNummerKreditkarte(String nummerKreditkarte) {
+    public void setNummerKreditkarte(String nummerKreditkarte) {
         this.nummerKreditkarte = nummerKreditkarte;
     }
 
     @Override
-    public String GetVerfallKreditkarte() {
+    public String getVerfallKreditkarte() {
         return this.verfallKreditkarte;
     }
 
     @Override
-    public void SetVerfallKreditkarte(String verfallKreditkarte) {
+    public void setVerfallKreditkarte(String verfallKreditkarte) {
         this.verfallKreditkarte = verfallKreditkarte;
     }
 }

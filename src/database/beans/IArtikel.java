@@ -1,14 +1,14 @@
 package database.beans;
 
 public interface IArtikel {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetNummer();
-    void SetNummer(int nummer);
-    int GetArtikelArt();
-    void SetArtikelArt(int artikelArt);
-    int GetEinheit();
-    void SetEinheit(int einheit);
-    int GetZustand();
-    void SetZustand(int zustand);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getNummer();
+    void setNummer(int nummer);
+    int getArtikelArt();
+    void setArtikelArt(int artikelArt);
+    int getEinheit();
+    void setEinheit(int einheit);
+    int getZustand();
+    void setZustand(int zustand);
 }

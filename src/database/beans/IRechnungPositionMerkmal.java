@@ -1,14 +1,14 @@
 package database.beans;
 
 public interface IRechnungPositionMerkmal {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetRechnungPositionIdentifier();
-    void SetRechnungPositionIdentifier(int rechnungPositionIdentifier);
-    String GetBeschreibung();
-    void SetBeschreibung(String beschreibung);
-    String GetSchluessel();
-    void SetSchluessel(String schluessel);
-    String GetWert();
-    void SetWert(String wert);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getRechnungPositionIdentifier();
+    void setRechnungPositionIdentifier(int rechnungPositionIdentifier);
+    String getBeschreibung();
+    void setBeschreibung(String beschreibung);
+    String getSchluessel();
+    void setSchluessel(String schluessel);
+    String getWert();
+    void setwert(String wert);
 }

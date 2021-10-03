@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Lagerbestand implements ILagerbestand {
     @Override
-    public ArrayList<ILagerbestand> ReadFuerArtikel(int identifier) {
+    public ArrayList<ILagerbestand> readFuerArtikel(int identifier) {
         return null;
     }
 
     @Override
-    public database.beans.ILagerbestand Read(int identifier) {
+    public database.beans.ILagerbestand read(int identifier) {
         return null;
     }
 }

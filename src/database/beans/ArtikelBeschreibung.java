@@ -6,32 +6,32 @@ public class ArtikelBeschreibung implements IArtikelBeschreibung {
     private int sprache;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetArtikelIdentifier() {
+    public int getArtikelIdentifier() {
         return this.artikelIdentifier;
     }
 
     @Override
-    public void SetArtikelIdentifier(int artikelIdentifier) {
+    public void setArtikelIdentifier(int artikelIdentifier) {
         this.artikelIdentifier = artikelIdentifier;
     }
 
     @Override
-    public int GetSprache() {
+    public int getSprache() {
         return this.sprache;
     }
 
     @Override
-    public void SetSprache(int sprache) {
+    public void setSprache(int sprache) {
         this.sprache = sprache;
     }
 }

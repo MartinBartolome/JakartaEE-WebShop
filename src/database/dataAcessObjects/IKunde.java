@@ -1,8 +1,8 @@
 package database.dataAcessObjects;
 
 public interface IKunde {
-    database.beans.IKunde Read(int identifier);
-    database.beans.IKunde Read(String eMailAdresse);
-    void Update(database.beans.IKunde kunde);
-    void Insert(database.beans.IKunde kunde);
+    database.beans.IKunde read(int identifier);
+    database.beans.IKunde read(String eMailAdresse);
+    void overwrite(database.beans.IKunde kunde);
+    void write(database.beans.IKunde kunde);
 }

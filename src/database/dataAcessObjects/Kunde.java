@@ -2,22 +2,22 @@ package database.dataAcessObjects;
 
 public class Kunde implements IKunde {
     @Override
-    public database.beans.IKunde Read(int identifier) {
+    public database.beans.IKunde read(int identifier) {
         return null;
     }
 
     @Override
-    public database.beans.IKunde Read(String eMailAdresse) {
+    public database.beans.IKunde read(String eMailAdresse) {
         return null;
     }
 
     @Override
-    public void Update(database.beans.IKunde kunde) {
+    public void overwrite(database.beans.IKunde kunde) {
 
     }
 
     @Override
-    public void Insert(database.beans.IKunde kunde) {
+    public void write(database.beans.IKunde kunde) {
 
     }
 }

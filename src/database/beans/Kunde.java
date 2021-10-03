@@ -11,82 +11,82 @@ public class Kunde implements IKunde {
     private int sprache;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetNummer() {
+    public int getNummer() {
         return this.nummer;
     }
 
     @Override
-    public void SetNummer(int nummer) {
+    public void setNummer(int nummer) {
         this.nummer = nummer;
     }
 
     @Override
-    public String GetName() {
+    public String getName() {
         return this.name;
     }
 
     @Override
-    public void SetName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
     @Override
-    public String GetVorname() {
+    public String getVorname() {
         return this.vorname;
     }
 
     @Override
-    public void SetVorname(String vorname) {
+    public void setVorname(String vorname) {
         this.vorname = vorname;
     }
 
     @Override
-    public String GetTelefonNummer() {
+    public String getTelefonNummer() {
         return this.telefonNummer;
     }
 
     @Override
-    public void SetTelefonNummer(String telefonNummer) {
+    public void setTelefonNummer(String telefonNummer) {
         this.telefonNummer = telefonNummer;
     }
 
     @Override
-    public String GetEMailAdresse() {
+    public String getEMailAdresse() {
         return this.eMailAdresse;
     }
 
     @Override
-    public void SetEMailAdresse(String eMailAdresse) {
+    public void setEMailAdresse(String eMailAdresse) {
         this.eMailAdresse = eMailAdresse;
     }
 
     @Override
-    public int GetZustand() {
+    public int getZustand() {
         return this.zustand;
     }
 
     @Override
-    public void SetZustand(int zustand) {
+    public void setZustand(int zustand) {
         this.zustand = zustand;
     }
 
     @Override
-    public int GetSprache() {
+    public int getSprache() {
         return this.sprache;
     }
 
     @Override
-    public void SetSprache(int sprache) {
+    public void setSprache(int sprache) {
         this.sprache = sprache;
     }
 }

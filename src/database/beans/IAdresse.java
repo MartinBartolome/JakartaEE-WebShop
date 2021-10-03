@@ -1,14 +1,14 @@
 package database.beans;
 
 public interface IAdresse {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetKundeIdentifier();
-    void SetKundeIdentifier(int kundeIdentifier);
-    String GetStrasse();
-    void SetStrasse(String strasse);
-    String GetPostleitzahl();
-    void SetPostleitzahl(String postleitzahl);
-    String GetOrt();
-    void SetOrt(String ort);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getKundeIdentifier();
+    void setKundeIdentifier(int kundeIdentifier);
+    String getStrasse();
+    void setStrasse(String strasse);
+    String getPostleitzahl();
+    void setPostleitzahl(String postleitzahl);
+    String getOrt();
+    void setOrt(String ort);
 }

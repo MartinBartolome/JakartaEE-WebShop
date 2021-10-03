@@ -2,12 +2,12 @@ package database.dataAcessObjects;
 
 public class ArtikelMerkmalBeschreibung implements IArtikelMerkmalBeschreibung {
     @Override
-    public database.beans.IArtikelMerkmalBeschreibung Read(int identifier) {
+    public database.beans.IArtikelMerkmalBeschreibung read(int identifier) {
         return null;
     }
 
     @Override
-    public database.beans.IArtikelMerkmalBeschreibung Read(int artikelMerkmalIdentifier, int sprache) {
+    public database.beans.IArtikelMerkmalBeschreibung read(int artikelMerkmalIdentifier, int sprache) {
         return null;
     }
 }

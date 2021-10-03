@@ -8,52 +8,52 @@ public class Artikel implements IArtikel {
     private int zustand;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return 0;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetNummer() {
+    public int getNummer() {
         return this.nummer;
     }
 
     @Override
-    public void SetNummer(int nummer) {
+    public void setNummer(int nummer) {
         this.nummer = nummer;
     }
 
     @Override
-    public int GetArtikelArt() {
+    public int getArtikelArt() {
         return this.artikelArt;
     }
 
     @Override
-    public void SetArtikelArt(int artikelArt) {
+    public void setArtikelArt(int artikelArt) {
         this.artikelArt = artikelArt;
     }
 
     @Override
-    public int GetEinheit() {
+    public int getEinheit() {
         return this.einheit;
     }
 
     @Override
-    public void SetEinheit(int einheit) {
+    public void setEinheit(int einheit) {
         this.einheit = einheit;
     }
 
     @Override
-    public int GetZustand() {
+    public int getZustand() {
         return this.zustand;
     }
 
     @Override
-    public void SetZustand(int zustand) {
+    public void setZustand(int zustand) {
         this.zustand = zustand;
     }
 }

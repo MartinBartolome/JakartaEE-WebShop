@@ -7,42 +7,42 @@ public class Lagerbestand implements ILagerbestand {
     private float verfuegbareEinheiten;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetLagerIdentifier() {
+    public int getLagerIdentifier() {
         return this.lagerIdentifier;
     }
 
     @Override
-    public void SetLagerIdentifier(int lagerIdentifier) {
+    public void setLagerIdentifier(int lagerIdentifier) {
         this.lagerIdentifier = lagerIdentifier;
     }
 
     @Override
-    public int GetArtikelIdentifier() {
+    public int getArtikelIdentifier() {
         return this.artikelIdentifier;
     }
 
     @Override
-    public void SetArtikelIdentifier(int artikelIdentifier) {
+    public void setArtikelIdentifier(int artikelIdentifier) {
         this.artikelIdentifier = artikelIdentifier;
     }
 
     @Override
-    public float GetVerfuegbareEinheiten() {
+    public float getVerfuegbareEinheiten() {
         return this.verfuegbareEinheiten;
     }
 
     @Override
-    public void SetVerfuegbareEinheiten(float verfuegbareEinheiten) {
+    public void setVerfuegbareEinheiten(float verfuegbareEinheiten) {
         this.verfuegbareEinheiten = verfuegbareEinheiten;
     }
 }

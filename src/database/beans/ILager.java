@@ -1,8 +1,8 @@
 package database.beans;
 
 public interface ILager {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    String GetBeschreibung();
-    void SetBeschreibung(String beschreibung);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    String getBeschreibung();
+    void setBeschreibung(String beschreibung);
 }

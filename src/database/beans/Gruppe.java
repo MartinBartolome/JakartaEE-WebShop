@@ -5,22 +5,22 @@ public class Gruppe implements IGruppe {
     private String kommentar;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = this.identifier;
     }
 
     @Override
-    public String GetKommentar() {
+    public String getKommentar() {
         return this.kommentar;
     }
 
     @Override
-    public void SetKommentar(String kommentar) {
+    public void setKommentar(String kommentar) {
         this.kommentar = this.kommentar;
     }
 }

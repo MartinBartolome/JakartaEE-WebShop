@@ -2,8 +2,8 @@ package database.dataAcessObjects;
 import java.util.ArrayList;
 
 public interface IBestellung {
-    ArrayList<database.beans.IBestellung> ReadFuerKunde(int identifier);
-    database.beans.IBestellung Read(int identifier);
-    void Update(database.beans.IBestellung bestellung);
-    void Insert(database.beans.IBestellung bestellung);
+    ArrayList<database.beans.IBestellung> readFuerKunde(int identifier);
+    database.beans.IBestellung read(int identifier);
+    void overwrite(database.beans.IBestellung bestellung);
+    void write(database.beans.IBestellung bestellung);
 }

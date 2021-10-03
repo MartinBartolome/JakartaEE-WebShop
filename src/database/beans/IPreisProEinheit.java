@@ -1,14 +1,14 @@
 package database.beans;
 
 public interface IPreisProEinheit {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetArtikelIdentifier();
-    void SetArtikelIdentifier(int artikelIdentifier);
-    int GetGueltigVon();
-    void SetGueltigVon(int gueltigVon);
-    int GetGueltigBis();
-    void SetGueltigBis(int gueltigBis);
-    float GetPreis();
-    void SetPreis(float preis);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getArtikelIdentifier();
+    void setArtikelIdentifier(int artikelIdentifier);
+    int getGueltigVon();
+    void setGueltigVon(int gueltigVon);
+    int getGueltigBis();
+    void setGueltigBis(int gueltigBis);
+    float getPreis();
+    void setPreis(float preis);
 }

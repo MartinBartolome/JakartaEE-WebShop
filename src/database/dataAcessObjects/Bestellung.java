@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Bestellung implements IBestellung {
     @Override
-    public ArrayList<database.beans.IBestellung> ReadFuerKunde(int identifier) {
+    public ArrayList<database.beans.IBestellung> readFuerKunde(int identifier) {
         return null;
     }
 
     @Override
-    public database.beans.IBestellung Read(int identifier) {
+    public database.beans.IBestellung read(int identifier) {
         return null;
     }
 
     @Override
-    public void Update(database.beans.IBestellung bestellung) {
+    public void overwrite(database.beans.IBestellung bestellung) {
 
     }
 
     @Override
-    public void Insert(database.beans.IBestellung bestellung) {
+    public void write(database.beans.IBestellung bestellung) {
 
     }
 }

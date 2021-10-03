@@ -1,12 +1,12 @@
 package database.beans;
 
 public interface IArtikelMerkmal {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetArtikelIdentifier();
-    void SetArtikelIdentifier(int ArtikelIdentifier);
-    String GetSchluessel();
-    void SetSchluessel(String schluessel);
-    String GetWert();
-    void SetWert(String wert);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getArtikelIdentifier();
+    void setArtikelIdentifier(int ArtikelIdentifier);
+    String getSchluessel();
+    void setSchluessel(String schluessel);
+    String getWert();
+    void setWert(String wert);
 }

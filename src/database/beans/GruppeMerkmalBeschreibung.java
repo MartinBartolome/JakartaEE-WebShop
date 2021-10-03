@@ -6,35 +6,35 @@ public class GruppeMerkmalBeschreibung implements IGruppeMerkmalBeschreibung{
     private String text;
     private int sprache;
 
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
-    public int GetGruppeMerkmalIdentifier() {
+    public int getGruppeMerkmalIdentifier() {
         return this.gruppeMerkmalIdentifier;
     }
 
-    public void SetGruppeMerkmalIdentifier(int gruppeMerkmalIdentifier) {
+    public void setGruppeMerkmalIdentifier(int gruppeMerkmalIdentifier) {
         this.gruppeMerkmalIdentifier = gruppeMerkmalIdentifier;
     }
 
-    public String GetText() {
+    public String getText() {
         return this.text;
     }
 
-    public void SetText(String text) {
+    public void setText(String text) {
         this.text = text;
     }
 
-    public int GetSprache() {
+    public int getSprache() {
         return this.sprache;
     }
 
-    public void SetSprache(int sprache) {
+    public void setSprache(int sprache) {
         this.sprache = sprache;
     }
 }

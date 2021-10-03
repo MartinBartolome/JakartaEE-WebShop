@@ -11,82 +11,82 @@ public class Rechnung implements IRechnung {
     private int datumRechnung;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
     @Override
-    public int GetKundeIdentifier() {
+    public int getKundeIdentifier() {
         return this.kundeIdentifier;
     }
 
     @Override
-    public void SetKundeIdentifier(int kundeIdentifier) {
+    public void setKundeIdentifier(int kundeIdentifier) {
         this.kundeIdentifier = kundeIdentifier;
     }
 
     @Override
-    public String GetEmpfaengerName() {
+    public String getEmpfaengerName() {
         return this.empfaengerName;
     }
 
     @Override
-    public void SetEmpfaengerName(String empfaengerName) {
+    public void setEmpfaengerName(String empfaengerName) {
         this.empfaengerName = empfaengerName;
     }
 
     @Override
-    public String GetEmpfaengerVorname() {
+    public String getEmpfaengerVorname() {
         return this.empfaengerVorname;
     }
 
     @Override
-    public void SetEmpfaengerVorname(String empfaengerVorname) {
+    public void setEmpfaengerVorname(String empfaengerVorname) {
         this.empfaengerVorname = empfaengerVorname;
     }
 
     @Override
-    public String GetEmpfaengerAddresse() {
+    public String getEmpfaengerAddresse() {
         return this.empfaengerAddresse;
     }
 
     @Override
-    public void SetEmpfaengerAddresse(String empfaengerAddresse) {
+    public void setEmpfaengerAddresse(String empfaengerAddresse) {
         this.empfaengerAddresse = empfaengerAddresse;
     }
 
     @Override
-    public String GetEmpfaengerPostleitzahl() {
+    public String getEmpfaengerPostleitzahl() {
         return this.empfaengerPostleitzahl;
     }
 
     @Override
-    public void SetEmpfaengerPostleitzahl(String empfaengerPostleitzahl) {
+    public void setEmpfaengerPostleitzahl(String empfaengerPostleitzahl) {
         this.empfaengerPostleitzahl = empfaengerPostleitzahl;
     }
 
     @Override
-    public String GetEmpfaengerOrt() {
+    public String getEmpfaengerOrt() {
         return this.empfaengerOrt;
     }
 
     @Override
-    public void SetEmpfaengerOrt(String empfaengerOrt) {
+    public void setEmpfaengerOrt(String empfaengerOrt) {
         this.empfaengerOrt = empfaengerOrt;
     }
 
     @Override
-    public int GetDatumRechnung() {
+    public int getDatumRechnung() {
         return this.datumRechnung;
     }
 
     @Override
-    public void SetDatumRechnung(int datumRechnung) {
+    public void setDatumRechnung(int datumRechnung) {
         this.datumRechnung = datumRechnung;
     }
 }

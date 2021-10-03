@@ -1,18 +1,18 @@
 package database.beans;
 
 public interface IRechnungPosition {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetRechnungIdentifier();
-    void SetRechnungIdentifier(int rechnungIdentifier);
-    int GetBeschreibung();
-    void SetBeschreibung(int beschreibung);
-    int GetArtikelNummer();
-    void SetArtikelNummer(int artikelNummer);
-    int GetReihenfolge();
-    void SetReihenfolge(int reihenfolge);
-    int GetAnzahlEinheiten();
-    void SetAnzahlEinheiten(int anzahlEinheiten);
-    int GetPreisProEinheit();
-    void SetPreisProEinheit(int preisProEinheit);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getRechnungIdentifier();
+    void setRechnungIdentifier(int rechnungIdentifier);
+    int getBeschreibung();
+    void setBeschreibung(int beschreibung);
+    int getArtikelNummer();
+    void setArtikelNummer(int artikelNummer);
+    int getReihenfolge();
+    void setReihenfolge(int reihenfolge);
+    int getAnzahlEinheiten();
+    void setAnzahlEinheiten(int anzahlEinheiten);
+    int getPreisProEinheit();
+    void setPreisProEinheit(int preisProEinheit);
 }

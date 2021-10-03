@@ -8,52 +8,52 @@ public class PreisProEinheit implements IPreisProEinheit {
     private float preis;
 
     @Override
-    public int GetIdentifier() {
+    public int getIdentifier() {
         return this.identifier;
     }
 
     @Override
-    public void SetIdentifier(int identifier) {
+    public void setIdentifier(int identifier) {
         this.identifier =  identifier;
     }
 
     @Override
-    public int GetArtikelIdentifier() {
+    public int getArtikelIdentifier() {
         return this.artikelIdentifier;
     }
 
     @Override
-    public void SetArtikelIdentifier(int artikelIdentifier) {
+    public void setArtikelIdentifier(int artikelIdentifier) {
         this.artikelIdentifier =  artikelIdentifier;
     }
 
     @Override
-    public int GetGueltigVon() {
+    public int getGueltigVon() {
         return this.gueltigVon;
     }
 
     @Override
-    public void SetGueltigVon(int gueltigVon) {
+    public void setGueltigVon(int gueltigVon) {
         this.gueltigVon =  gueltigVon;
     }
 
     @Override
-    public int GetGueltigBis() {
+    public int getGueltigBis() {
         return this.gueltigBis;
     }
 
     @Override
-    public void SetGueltigBis(int gueltigBis) {
+    public void setGueltigBis(int gueltigBis) {
         this.gueltigBis =  gueltigBis;
     }
 
     @Override
-    public float GetPreis() {
+    public float getPreis() {
         return this.preis;
     }
 
     @Override
-    public void SetPreis(float preis) {
+    public void setPreis(float preis) {
         this.preis = preis;
     }
 }

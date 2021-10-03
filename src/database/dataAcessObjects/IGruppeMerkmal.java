@@ -1,5 +1,8 @@
 package database.dataAcessObjects;
 
+import java.util.ArrayList;
+
 public interface IGruppeMerkmal {
-    database.beans.IGruppeMerkmal Read(int gruppeIdentifier);
+    ArrayList<database.beans.IGruppeMerkmal> readFuerGruppe(int gruppeIdentifier);
+    database.beans.IGruppeMerkmal read(int identifier);
 }

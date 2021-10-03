@@ -1,12 +1,12 @@
 package database.beans;
 
 public interface IGruppeMerkmalBeschreibung {
-    int GetIdentifier();
-	void SetIdentifier(int Identifier);
-    int GetGruppeMerkmalIdentifier();
-	void SetGruppeMerkmalIdentifier(int GruppeMerkmalIdentifier);
-    String GetText();
-	void SetText(String Text);
-    int GetSprache();
-	void SetSprache(int Sprache);
+    int getIdentifier();
+	void setIdentifier(int Identifier);
+    int getGruppeMerkmalIdentifier();
+	void setGruppeMerkmalIdentifier(int GruppeMerkmalIdentifier);
+    String getText();
+	void setText(String Text);
+    int getSprache();
+	void setSprache(int Sprache);
 }

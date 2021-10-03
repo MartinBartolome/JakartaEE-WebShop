@@ -1,14 +1,14 @@
 package database.beans;
 
 public interface IBestellungPositionMerkmal {
-    int GetIdentifier();
-    void SetIdentifier(int identifier);
-    int GetBestellungPositionIdentifier();
-    void SetBestellungPositionIdentifier(int bestellungPositionIdentifier);
-    int GetBeschreibung();
-    void SetBeschreibung(int beschreibung);
-    String GetSchluessel();
-    void SetSchluessel(String schluessel);
-    String GetWert();
-    void SetWert(String wert);
+    int getIdentifier();
+    void setIdentifier(int identifier);
+    int getBestellungPositionIdentifier();
+    void setBestellungPositionIdentifier(int bestellungPositionIdentifier);
+    int getBeschreibung();
+    void setBeschreibung(int beschreibung);
+    String getSchluessel();
+    void setSchluessel(String schluessel);
+    String getWert();
+    void setWert(String wert);
 }
