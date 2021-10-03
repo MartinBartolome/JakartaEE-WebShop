@@ -1,4 +1,2 @@
-package database;
-
-public class Database implements IDatabase {
+package database;public class Database {
 }
