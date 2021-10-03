@@ -7,14 +7,14 @@ public interface IBestellungPosition {
     void setBestellungIdentifier(int bestellungIdentifier);
     int getArtikelIdentifier();
     void setArtikelIdentifier(int artikelIdentifier);
-    int getBeschreibung();
-    void setBeschreibung(int beschreibung);
-    int getArtikelNummer();
-    void setArtikelNummer(int artikelNummer);
+    String getBeschreibung();
+    void setBeschreibung(String beschreibung);
+    String getArtikelNummer();
+    void setArtikelNummer(String artikelNummer);
     int getReihenfolge();
     void setReihenfolge(int reihenfolge);
     int getAnzahlEinheiten();
     void setAnzahlEinheiten(int anzahlEinheiten);
-    int getPreisProEinheit();
-    void setPreisProEinheit(int preisProEinheit);
+    float getPreisProEinheit();
+    void setPreisProEinheit(float preisProEinheit);
 }

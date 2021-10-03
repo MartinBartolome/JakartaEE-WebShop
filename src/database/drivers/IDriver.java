@@ -7,6 +7,7 @@ public interface IDriver {
     void runStatement(String statement, IParameter parameter) throws SQLException;
     void runStatement(String statement, IParameter[] parameters) throws SQLException;
     void runStatement(String statement) throws SQLException;
+    long runInsert(String statement, IParameter[] parameters) throws SQLException;
     IQueryResultsHandle runQuery(String query, IParameter parameter) throws SQLException;
     IQueryResultsHandle runQuery(String query, IParameter[] parameters) throws SQLException;
     IQueryResultsHandle runQuery(String query) throws SQLException;

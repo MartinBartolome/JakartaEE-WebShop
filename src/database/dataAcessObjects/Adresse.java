@@ -12,7 +12,8 @@ public class Adresse implements IAdresse {
             String query = "SELECT * FROM ADRESSE WHERE IDENTIFIER=?";
             IParameter parameter = new ParameterTypeInt(0, identifier);
             IDriver driver = Factory.create();
-            IQueryResultsHandle handle = driver.runQuery(query.toString(), parameter);
+            assert driver != null;
+            IQueryResultsHandle handle = driver.runQuery(query, parameter);
             handle.getReader().next();
             bean = new database.beans.Adresse();
             bean.setIdentifier(handle.getReader().getInt(0));
@@ -27,20 +28,22 @@ public class Adresse implements IAdresse {
     }
 
     @Override
-    public void write(database.beans.IAdresse adresse) {
+    public long write(database.beans.IAdresse adresse) {
         try {
             String query = "INSERT INTO ADRESSE VALUES(?,?,?,?)";
             IParameter[] parameters = {
                 new ParameterTypeInt(0, adresse.getKundeIdentifier()),
-                new ParameterTypeString(0, adresse.getStrasse()),
-                new ParameterTypeString(0, adresse.getPostleitzahl()),
-                new ParameterTypeString(0, adresse.getOrt())
+                new ParameterTypeString(1, adresse.getStrasse()),
+                new ParameterTypeString(2, adresse.getPostleitzahl()),
+                new ParameterTypeString(3, adresse.getOrt())
             };
             IDriver driver = Factory.create();
-            driver.runStatement(query.toString(), parameters);
+            assert driver != null;
+            return driver.runInsert(query, parameters);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return 0;
    }
 
     @Override
@@ -54,11 +57,12 @@ public class Adresse implements IAdresse {
             statement.append("WHERE IDENTIFIER=?");
             IParameter[] parameters = {
                 new ParameterTypeString(0, adresse.getStrasse()),
-                new ParameterTypeString(0, adresse.getPostleitzahl()),
-                new ParameterTypeString(0, adresse.getOrt()),
-                new ParameterTypeInt(0, adresse.getIdentifier())
+                new ParameterTypeString(1, adresse.getPostleitzahl()),
+                new ParameterTypeString(2, adresse.getOrt()),
+                new ParameterTypeInt(3, adresse.getIdentifier())
             };
             IDriver driver = Factory.create();
+            assert driver != null;
             driver.runStatement(statement.toString(), parameters);
         } catch (SQLException throwables) {
             throwables.printStackTrace();

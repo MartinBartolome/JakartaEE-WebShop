@@ -114,4 +114,19 @@ public class Driver implements IDriver {
     public Boolean testConnection() throws SQLException {
         return (null != openConnection());
     }
+
+    @Override
+    public long runInsert(String statement, IParameter[] parameters) throws SQLException {
+        Connection connection = openConnection();
+        PreparedStatement connectionStatement = connection.prepareStatement(statement);
+        for (IParameter parameter : parameters)
+        {
+            parameter.addToStatement(connectionStatement);
+        }
+        connectionStatement.execute();
+        connectionStatement.getGeneratedKeys();
+        ResultSet reader = connectionStatement.getGeneratedKeys();
+        reader.next();
+        return reader.getLong(0);
+    }
 }

@@ -4,11 +4,11 @@ public class BestellungPosition implements IBestellungPosition {
     private int identifier;
     private int bestellungIdentifier;
     private int artikelIdentifier;
-    private int beschreibung;
-    private int artikelNummer;
+    private String beschreibung;
+    private String artikelNummer;
     private int reihenfolge;
     private int anzahlEinheiten;
-    private int preisProEinheit;
+    private float preisProEinheit;
 
     @Override
     public int getIdentifier() {
@@ -41,22 +41,22 @@ public class BestellungPosition implements IBestellungPosition {
     }
 
     @Override
-    public int getBeschreibung() {
+    public String getBeschreibung() {
         return this.beschreibung;
     }
 
     @Override
-    public void setBeschreibung(int beschreibung) {
+    public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     @Override
-    public int getArtikelNummer() {
+    public String getArtikelNummer() {
         return this.artikelNummer;
     }
 
     @Override
-    public void setArtikelNummer(int artikelNummer) {
+    public void setArtikelNummer(String artikelNummer) {
         this.artikelNummer = artikelNummer;
     }
 
@@ -81,12 +81,12 @@ public class BestellungPosition implements IBestellungPosition {
     }
 
     @Override
-    public int getPreisProEinheit() {
+    public float getPreisProEinheit() {
         return this.preisProEinheit;
     }
 
     @Override
-    public void setPreisProEinheit(int preisProEinheit) {
+    public void setPreisProEinheit(float preisProEinheit) {
         this.preisProEinheit = preisProEinheit;
     }
 }

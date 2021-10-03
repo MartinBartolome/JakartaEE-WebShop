@@ -5,14 +5,14 @@ public interface IRechnungPosition {
     void setIdentifier(int identifier);
     int getRechnungIdentifier();
     void setRechnungIdentifier(int rechnungIdentifier);
-    int getBeschreibung();
-    void setBeschreibung(int beschreibung);
-    int getArtikelNummer();
-    void setArtikelNummer(int artikelNummer);
+    String getBeschreibung();
+    void setBeschreibung(String beschreibung);
+    String getArtikelNummer();
+    void setArtikelNummer(String artikelNummer);
     int getReihenfolge();
     void setReihenfolge(int reihenfolge);
     int getAnzahlEinheiten();
     void setAnzahlEinheiten(int anzahlEinheiten);
-    int getPreisProEinheit();
-    void setPreisProEinheit(int preisProEinheit);
+    float getPreisProEinheit();
+    void setPreisProEinheit(float preisProEinheit);
 }

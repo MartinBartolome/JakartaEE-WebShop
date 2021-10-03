@@ -12,6 +12,7 @@ public class Gruppe implements IGruppe {
             String query = "SELECT * FROM GRUPPE WHERE IDENTIFIER=?";
             IParameter parameter = new ParameterTypeInt(0, identifier);
             IDriver driver = Factory.create();
+            assert driver != null;
             IQueryResultsHandle handle = driver.runQuery(query, parameter);
             handle.getReader().next();
             bean = new database.beans.Gruppe();

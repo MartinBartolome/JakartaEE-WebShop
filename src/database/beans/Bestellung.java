@@ -13,7 +13,7 @@ public class Bestellung implements IBestellung {
     private String empfaengerVerfallKreditkarte;
     private int datumBestellung;
     private int datumAuslieferung;
-    private String zustand;
+    private int zustand;
 
     @Override
     public int getIdentifier() {
@@ -136,12 +136,12 @@ public class Bestellung implements IBestellung {
     }
 
     @Override
-    public String getZustand() {
+    public int getZustand() {
         return this.zustand;
     }
 
     @Override
-    public void setZustand(String Zustand) {
+    public void setZustand(int Zustand) {
         this.zustand = Zustand;
     }
 }

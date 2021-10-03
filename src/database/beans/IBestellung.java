@@ -25,6 +25,6 @@ public interface IBestellung {
     void setDatumBestellung(int datumBestellung);
     int getDatumAuslieferung();
     void setDatumAuslieferung(int datumAuslieferung);
-    String getZustand();
-    void setZustand(String zustand);
+    int getZustand();
+    void setZustand(int zustand);
 }
