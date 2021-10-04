@@ -1,8 +1,0 @@
-{
-  "fileVersion": "1.0",
-  "databaseDriverName": "sqlite",
-  "databaseServerName": "/mnt/dataRepository/LasPlontinasWebShop",
-  "databaseName" :  "database.db",
-  "databaseUserName" : "",
-  "databaseUserPassword" : ""
-}

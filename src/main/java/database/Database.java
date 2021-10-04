@@ -1,7 +1,7 @@
 package database;
 
 import database.beans.IApplicationSettings;
-import org.json.JSONException;
+import jakarta.json.*;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ public class Database {
             try
             {
                 instance = new Database();
-            } catch (JSONException e) {
+            } catch (JsonException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -24,11 +24,11 @@ public class Database {
         return instance;
     }
 
-    private Database() throws JSONException, IOException {
+    private Database() throws JsonException, IOException {
         loadApplicationSettings("./ApplicationSetting.json");
     }
 
-    public void loadApplicationSettings(String applicationSettingsFileName) throws JSONException, IOException {
+    public void loadApplicationSettings(String applicationSettingsFileName) throws JsonException, IOException {
         this.applicationSettings = new database.beans.ApplicationSettings();
         database.dataAcessObjects.IApplicationSettings reader = new database.dataAcessObjects.ApplicationSettings();
         this.applicationSettings = reader.read(applicationSettingsFileName);
