@@ -3,11 +3,6 @@
   padding: 9px;
   color: gray;
 }
-body > header {
-  background: url("../img/tau.jpg");
-  border-radius: 10px;  
-  box-shadow: 5px 5px 9px gray;
-}
 a {
   color: white;
   text-decoration: none;
@@ -15,4 +10,52 @@ a {
 a:hover, h1.title {
   color: white;
   text-shadow: 0 0 10px white, 0 0 20px white;
+}
+.input-container{
+  width: 100%;
+}
+.right-inner-addon {
+  position: relative;
+}
+.right-inner-addon input {
+  padding-right: 35px !important;
+}
+.icon{
+  color: #3590cb;
+}
+.right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 15px 25px;
+  pointer-events: none;
+}
+.form-control{
+  width: 100%;
+}
+input {
+  width: 100%;
+  padding: 1em !important;
+  margin: 0em !important;
+  box-sizing: border-box;
+}
+h2 {
+  color: green;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#logo{
+  width:150px;
+}
+#localization{
+  min-width: 60px;
+  height:40px;
+}
+.navButton{
+  min-width: 110px;
+  margin-left: 10px;
+  height: 75px;
 }

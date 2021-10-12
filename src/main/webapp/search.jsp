@@ -15,6 +15,7 @@
 					<input 
 						type="text" 
 						name="search"
+						id="search"
 						size="40"
 						maxlength="40"
 						title="Suchtext"

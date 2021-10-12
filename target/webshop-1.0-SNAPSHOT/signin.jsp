@@ -12,6 +12,7 @@
 				<input 
 					type="email" 
 					name="email"
+					id="email"
 					size="40"
 					maxlength="40"
 					title="muster@beispiel.de"
@@ -30,6 +31,7 @@
 				<input 
 					type="password" 
 					name="password"
+					id="password"
 					size="10"
 					maxlength="10"
 					title="6-10 Zeichen"
