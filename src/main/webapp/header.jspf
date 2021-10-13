@@ -19,13 +19,14 @@
 				<i class="fa fa-search icon"></i>
 				<input type="text"
 					   class="form-control"
-					   placeholder="Schlagwort / Artikelnummer / EAN / Teilenummer" />
+					   placeholder=<fmt:message key="searchbar"/> />
 			</div>
 			</div>
 			<select id="localization"  onchange="location = this.value;">
-				<option value="index.jsp?locale=de_DE">DE</option>
-				<option value="index.jsp?locale=en_US">EN</option>
+				<option>?</option>
+				<option value="?locale=de_DE">DE</option>
+				<option value="?locale=en_US">EN</option>
 			</select>
-			<button class="navButton">Konto</button>
-			<button class="navButton">Einkaufswagen</button>
+			<button class="navButton"><fmt:message key="account"/></button>
+			<button class="navButton"><fmt:message key="cart"/></button>
 		</nav>

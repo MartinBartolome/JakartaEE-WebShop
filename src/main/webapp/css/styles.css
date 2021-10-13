@@ -3,14 +3,7 @@
   padding: 9px;
   color: gray;
 }
-a {
-  color: white;
-  text-decoration: none;
-}
-a:hover, h1.title {
-  color: white;
-  text-shadow: 0 0 10px white, 0 0 20px white;
-}
+
 .input-container{
   width: 100%;
 }

@@ -6,17 +6,16 @@
 		<tbody>
 		<tr>
 			<th>
-				<label for="email"><fmt:message key="email"/>:</label>
+				<label for="UName"><fmt:message key="UserName"/>:</label>
 			</th>
 			<td>
 				<input 
-					type="email" 
-					name="email"
-					id="email"
+					type="text"
+					name="UName"
+					id="UName"
 					size="40"
 					maxlength="40"
-					title="muster@beispiel.de"
-					placeholder="E-Mail eingeben"
+					placeholder=<fmt:message key="UserName"/>
 					pattern=".{6,40}" 
 					required="required">
 			</td>
@@ -35,15 +34,20 @@
 					size="10"
 					maxlength="10"
 					title="6-10 Zeichen"
-					placeholder="Passwort eingeben"
+					placeholder=<fmt:message key="passwordenter"/>
 					pattern=".{6,10}" 
 					required="required">
 			</td>
 		</tr>
 		<tr>
+			<td/>
+			<td>
+				<a href="?"><fmt:message key="passwordlost"/></a>
+			</td>
+		</tr>
+		<tr>
 			<td/><td>
-				<input type="submit"> 		
-				<input type="reset"> 		
+				<input type="submit" value=<fmt:message key="login"/>>
 			</td>
 		</tr>
 	</tbody>
