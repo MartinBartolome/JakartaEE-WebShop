@@ -1,11 +1,28 @@
 package database.beans;
 
+import jakarta.annotation.PostConstruct;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ZahlungsArt implements  IZahlungsArt {
     private int identifier;
     private int kundeIdentifier;
     private int zahlungsArt;
     private String nummerKreditkarte;
     private String verfallKreditkarte;
+    private String selectedItem;
+    private List<String> items;
+
+    @PostConstruct
+    public void init()
+    {
+        items = new ArrayList<>();
+        selectedItem = "Item 1";
+        items.add( selectedItem );
+        items.add( "Item 2" );
+        items.add( "Item 3" );
+    }
 
     @Override
     public int getIdentifier() {
