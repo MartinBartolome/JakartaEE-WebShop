@@ -1,5 +1,9 @@
 package servlets;
 
+import database.beans.User;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,17 +22,15 @@ public class ServerPushServlet extends HttpServlet {
             final HttpServletResponse response)
             throws ServletException, IOException {
 
-        PushBuilder pushBuilder = request.newPushBuilder();
-        if (pushBuilder != null) {
-            pushBuilder.path("resources/img/tau.jpg")
-                    .addHeader("content-type", "image/jpg")
-                    .push();
-        }
-        try (PrintWriter respWriter = response
-                .getWriter();) {
-            respWriter.write(
-                    "<html><img src='resources/img/tau.jpg'></html>");
-
-        }
+        User employee = new User();
+        employee.setId(5);
+        employee.setEmail("Abo Sheasha");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.persist(employee);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        entityManagerFactory.close();
     }
 }
