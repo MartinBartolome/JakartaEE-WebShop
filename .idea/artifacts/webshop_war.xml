@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="webshop-1.0-SNAPSHOT.war">
+    <root id="archive" name="webshop-1.0.war">
       <element id="artifact" artifact-name="webshop:war exploded" />
     </root>
   </artifact>
