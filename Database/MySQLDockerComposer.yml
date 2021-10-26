@@ -11,7 +11,7 @@ services:
       # Password for root access
       MYSQL_ROOT_PASSWORD: 'password'
     volumes:
-      - ./init:/docker-entrypoint-initdb.d
+      - ./init/init-script.sql:/docker-entrypoint-initdb.d/1.sql
     ports:
       # <Port exposed> : < MySQL Port running inside container>
       - '3306:3306'
