@@ -1,0 +1,60 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/layout/template.xhtml">
+   <ui:define name="metadata">
+      <f:metadata>
+         <f:viewAction action="#{benutzerProfilEditieren.initialize()}" />
+      </f:metadata>
+   </ui:define>
+   <ui:define name="pageTitle"> </ui:define>
+   <ui:define name="content">
+      <h:form>
+         <div class="form-group">
+            <label for="identifier">Identifier</label>
+            <h:inputText type="number" class="form-control" id="identifier" placeholder="Identifier" value="#{benutzerProfilEditieren.kunde.identifier}"/>
+         </div>
+         <div class="form-group">
+            <label for="nummer">Nummer</label>
+            <h:inputText type="number" class="form-control" id="nummer" placeholder="Nummer" value="#{benutzerProfilEditieren.kunde.nummer}"/>
+         </div>
+         <div class="form-group">
+            <label for="password">Passwort</label>
+            <h:inputText type="text" class="form-control" id="password" placeholder="Passwort" value="#{benutzerProfilEditieren.kunde.passwort}"/>
+         </div>
+         <div class="form-group">
+            <label for="vorname">Vorname</label>
+            <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{benutzerProfilEditieren.kunde.vorname}"/>
+         </div>
+         <div class="form-group">
+            <label for="nachname">Nachname</label>
+            <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{benutzerProfilEditieren.kunde.name}"/>
+         </div>
+         <div class="form-group">
+            <label for="email">E-Mail</label>
+            <h:inputText type="text" class="form-control" id="email" placeholder="E-Mail Adresse" value="#{benutzerProfilEditieren.kunde.EMailAdresse}"/>
+         </div>
+         <div class="form-group">
+            <label for="telefonnummer">Nummer</label>
+            <h:inputText type="text" class="form-control" id="telefonnummer" placeholder="Telefon-Nummer" value="#{benutzerProfilEditieren.kunde.telefonNummer}"/>
+         </div>
+         <select class="browser-default custom-select">
+            <ui:repeat value="#{benutzerProfilEditieren.sprachen}" var="item">
+               <option value="#{item.identifier}">#{item.wert}</option>
+            </ui:repeat>
+         </select>
+         <option selected="">#{benutzerProfilEditieren.kunde.sprache}</option>
+         <div class="form-group">
+            <label for="strasse">Strasse</label>
+            <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{benutzerProfilEditieren.adresse.strasse}"/>
+         </div>
+         <div class="form-group">
+            <h:commandButton id="submit" type="submit"
+                             styleClass="btn btn-lg btn-primary"
+                             action="#{benutzerProfilEditieren.speichern()}" value="Speichern">
+            </h:commandButton>
+         </div>
+      </h:form>
+   </ui:define>
+</ui:composition>

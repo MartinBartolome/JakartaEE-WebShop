@@ -6,16 +6,23 @@
     <navigation-rule>
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-outcome>index</from-outcome>
+            <from-outcome>anmelden</from-outcome>
             <to-view-id>
-                /Test.xhtml
+                /anmelden.xhtml
             </to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>register</from-outcome>
+            <from-outcome>goToArtikelAuswahl</from-outcome>
             <to-view-id>
-                /register.xhtml
+                /artikelAuswahl.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToAnmelden</from-outcome>
+            <to-view-id>
+                /anmelden.xhtml
             </to-view-id>
             <redirect/>
         </navigation-case>

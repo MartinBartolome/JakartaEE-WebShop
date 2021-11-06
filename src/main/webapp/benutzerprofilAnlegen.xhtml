@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/layout/template.xhtml">
+   <ui:define name="metadata">
+      <f:metadata>
+         <f:viewAction action="#{benutzerProfilEditieren.initialize()}" />
+      </f:metadata>
+   </ui:define>
+   <ui:define name="pageTitle"> </ui:define>
+   <ui:define name="content">
+      <h:form>
+         <div class="form-group">
+            <label for="vorname">Vorname</label>
+            <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{benutzerProfilAnlegen.kunde.vorname}"/>
+         </div>
+         <div class="form-group">
+            <label for="nachname">Nachname</label>
+            <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{benutzerProfilAnlegen.kunde.name}"/>
+         </div>
+         <div class="form-group">
+            <label for="email">E-Mail</label>
+            <h:inputText type="text" class="form-control" id="email" placeholder="E-Mail Adresse" value="#{benutzerProfilAnlegen.kunde.EMailAdresse}"/>
+         </div>
+         <select class="browser-default custom-select">
+            <ui:repeat value="#{benutzerProfilAnlegen.sprachen}" var="item">
+               <option value="#{item.identifier}">#{item.wert}</option>
+            </ui:repeat>
+         </select>
+         <option selected="">#{benutzerProfilAnlegen.kunde.sprache}</option>
+         <div class="form-group">
+            <label for="strasse">Strasse</label>
+            <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{benutzerProfilAnlegen.adresse.strasse}"/>
+         </div>
+         <div class="form-group">
+            <label for="postleitzahl">Postleitzahl</label>
+            <h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{benutzerProfilAnlegen.adresse.postleitzahl}"/>
+         </div>
+         <div class="form-group">
+            <label for="ort">Ort</label>
+            <h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{benutzerProfilAnlegen.adresse.ort}"/>
+         </div>
+         <!--
+         <div class="form-check">
+            <h:input class="form-check-input" type="radio" name="zahlungsart" id="rechnung"/>
+            <label class="form-check-label" for="rechnung">
+               Default radio
+            </label>
+         </div>
+         <div class="form-check">
+            <h:input class="form-check-input" type="radio" name="zahlungsart" id="kreditkarte" checked/>
+            <label class="form-check-label" for="kreditkarte">
+               Default checked radio
+            </label>
+         </div>
+         -->
+         <div class="form-group">
+            <label for="nummer_kreditkarten">Nummer Kreditkarte</label>
+            <h:inputText type="text" class="form-control" id="nummer_kreditkarten" value="#{benutzerProfilAnlegen.zahlungsArt.nummerKreditkarte}"/>
+         </div>
+         <div class="form-group">
+            <label for="verfall_kreditkarten">Verfall Kreditkarte</label>
+            <h:inputText type="text" class="form-control" id="verfall_kreditkarten" placeholder="JJJMM" value="#{benutzerProfilAnlegen.zahlungsArt.verfallKreditkarte}"/>
+         </div>
+         <div class="form-group">
+            <h:commandButton id="submit" type="submit"
+                             styleClass="btn btn-lg btn-primary"
+                             action="#{benutzerProfilAnlegen.speichern()}" value="Speichern">
+            </h:commandButton>
+         </div>
+      </h:form>
+   </ui:define>
+</ui:composition>
