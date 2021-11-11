@@ -2,16 +2,56 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:c="http://java.sun.com/jsp/jstl/core"
                 template="/WEB-INF/layout/template.xhtml">
     <ui:define name="metadata">
         <f:metadata>
-            <!-- <f:viewAction action="#{taskHome.init()}" /> -->
+            <f:viewAction action="#{einkaufswagen.initialize()}" />
         </f:metadata>
     </ui:define>
     <ui:define name="pageTitle"> </ui:define>
     <ui:define name="content">
         <h:form>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Nummer</th>
+                    <th scope="col">Beschreibung</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Einheit</th>
+                    <th scope="col">Menge</th>
+                    <th scope="col">Preis/Einheit</th>
+                    <th scope="col">Betrag</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <ui:repeat value="#{einkaufswagen.einkaufswagen.artikel}" var="item">
+                    <tr>
+                        <th scope="row">#{item.artikel.nummer}</th>
+                        <td>#{item.artikel.beschreibung}</td>
+                        <td>#{item.artikel.einheit}</td>
+                        <td>
+                            <h:commandLink id="btndelete" action="#{einkaufswagen.artikelLoeschen}" styleClass="btn btn-default">
+                                <i class="fa fa-trash fa-lg"></i>
+                                <f:param name="ArtikelIdentifier" value="#{item.identifier}" />
+                            </h:commandLink>
+                            <h:commandLink id="btnedit" action="#{einkaufswagen.artikelEditieren}" styleClass="btn btn-default">
+                                <i class="fa fa-edit fa-lg"></i>
+                                <f:param name="ArtikelIdentifier" value="#{item.identifier}" />
+                            </h:commandLink>
+                        </td>
+                    </tr>
+                </ui:repeat>
+                </tbody>
+            </table>
+            <div>
+                <h:commandButton id="submit" type="submit"
+                                 styleClass="btn btn-lg btn-primary"
+                                 action="#{einkaufswagen.bestellungAusloesen()}" value="Zur Kasse">
+                </h:commandButton>
+            </div>
+            <br>
+            </br>
         </h:form>
     </ui:define>
 </ui:composition>

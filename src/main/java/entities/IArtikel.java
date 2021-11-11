@@ -11,6 +11,6 @@ public interface IArtikel {
     void setEinheit(int einheit);
     int getZustand();
     void setZustand(int zustand);
-    int getKonfigurator();
-    void setKonfigurator(int konfigurator);
+    String getKonfigurator();
+    void setKonfigurator(String konfigurator);
 }

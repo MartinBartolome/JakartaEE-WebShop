@@ -37,13 +37,13 @@ public class Anmelden extends ManagedBean {
             Kunde kunde = (Kunde)query.getSingleResult();
             if (kunde != null) {
                 setSessionValue("KundeIdentifier", kunde.getIdentifier());
-                setSessionValue("AnzeigeSprache", kunde.getSprache());
+                setSessionValue("Sprache", kunde.getSprache());
                 FacesContext.getCurrentInstance().addMessage("anmelden", new FacesMessage("Verifikation erfolgreich"));
-                return "goToArtikelAuswahl";
+                return "loadArtikelAuswahl";
             }
         } catch(Exception exObj) {
             FacesContext.getCurrentInstance().addMessage("loginForm:loginName", new FacesMessage("Username Or Password Is Incorrect"));
         }
-        return "goToAnmelden";
+        return "loadAnmelden";
     }
 }

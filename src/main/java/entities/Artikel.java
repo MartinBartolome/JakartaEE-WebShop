@@ -12,7 +12,7 @@ public class Artikel implements IArtikel {
     private int artikelArt = 0;
     private int einheit = 0;
     private int zustand = 0;
-    private int konfigurator = 0;
+    private String konfigurator = "";
 
     @Override
     public int getIdentifier() {
@@ -65,12 +65,12 @@ public class Artikel implements IArtikel {
     }
 
     @Override
-    public int getKonfigurator() {
+    public String getKonfigurator() {
         return this.konfigurator;
     }
 
     @Override
-    public void setKonfigurator(int konfigurator) {
+    public void setKonfigurator(String konfigurator) {
         this.konfigurator = konfigurator;
     }
 }

@@ -51,10 +51,11 @@ public class BenutzerProfilAnlegen extends ManagedBean {
         return this.sprachen;
     }
 
-    public void speichern() {
+    public String speichern() {
         speichernKunde();
         speichernAdresse();
         speichernZahlungsArt();
+        return "loadArtikelAuswahl";
     }
 
     private void speichernKunde() {

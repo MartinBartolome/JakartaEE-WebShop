@@ -28,13 +28,17 @@
                             <td>#{item.einheit}</td>
                             <td>
                                 <h:commandLink id="btnsearch" action="#{artikelAuswahl.artikelInKonfiguratorLaden}" styleClass="btn btn-default">
-                                    <i class="fa fa-shopping-cart fa-lg"></i><f:param name="ArtikelIdentifier" value="#{item.identifier}" />
+                                    <i class="fa fa-shopping-cart fa-lg"></i>
+                                    <f:param name="ArtikelIdentifier" value="#{item.identifier}" />
+                                    <f:param name="ArtikelKonfigurator" value="#{item.konfigurator}" />
                                 </h:commandLink>
                             </td>
                         </tr>
                     </ui:repeat>
                     </tbody>
             </table>
+            <br>
+            </br>
     </h:form>
     </ui:define>
 </ui:composition>

@@ -1,0 +1,64 @@
+package beans;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MerkmaleKalkulation implements IMerkmaleKalkulation {
+    private Map<String, IArtikelMerkmal> merkmale;
+
+    public MerkmaleKalkulation() {
+        this.merkmale = new HashMap<>();
+    }
+
+    public Map<String, IArtikelMerkmal> getMerkmale() {
+        return this.merkmale;
+    }
+
+    public String getBeschreibungMenge() {
+        return this.merkmale.get("PMenge").getBeschreibung();
+    }
+
+    public String getMenge() {
+        return this.merkmale.get("PMenge").getWert();
+    }
+
+    public void setMenge(String wert) {
+        this.merkmale.get("PMenge").setWert(wert);
+    }
+
+    public String getBeschreibungPreiProEinheit() {
+        return this.merkmale.get("PPreisEinheit").getBeschreibung();
+    }
+
+    public String getPreisProEinheit() {
+        return this.merkmale.get("PPreisEinheit").getWert();
+    }
+
+    public void setPreisProEinheit(String wert) {
+        this.merkmale.get("PPreisEinheit").setWert(wert);
+    }
+
+    public String getBeschreibungBetrag() {
+        return this.merkmale.get("PBetrag").getBeschreibung();
+    }
+
+    public String getBetrag() {
+        return this.merkmale.get("PBetrag").getWert();
+    }
+
+    public void setBetrag(String wert) {
+        this.merkmale.get("PBetrag").setWert(wert);
+    }
+
+    public String getVariableBeschreibung() {
+        return this.merkmale.get("PVariable").getBeschreibung();
+    }
+
+    public String getVariable() {
+        return this.merkmale.get("PVariable").getWert();
+    }
+
+    public void setVariable(String wert) {
+        this.merkmale.get("PVariable").setWert(wert);
+    }
+}

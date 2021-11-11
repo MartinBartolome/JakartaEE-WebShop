@@ -13,4 +13,6 @@ public interface IArtikel {
      void setBeschreibung(String beschreibung);
      String getZustand();
      void setZustand(String zustand);
+     String getKonfigurator();
+     void setKonfigurator(String konfigurator);
 }

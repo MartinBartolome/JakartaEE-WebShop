@@ -13,46 +13,130 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>goToArtikelAuswahl</from-outcome>
+            <from-outcome>loadArtikelAuswahl</from-outcome>
             <to-view-id>
                 /artikelAuswahl.xhtml
             </to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>goToAnmelden</from-outcome>
+            <from-outcome>loadAnmelden</from-outcome>
             <to-view-id>
                 /anmelden.xhtml
             </to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>signin</from-outcome>
+            <from-outcome>loadKonfiguratorKontrolleinheit</from-outcome>
             <to-view-id>
-                /signin.xhtml
+                /konfiguratorKontrolleinheit.xhtml
             </to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>sell</from-outcome>
+            <from-outcome>loadKonfiguratorPumpeneinheit</from-outcome>
             <to-view-id>
-                /sell.xhtml
+                /konfiguratorPumpeneinheit.xhtml
             </to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>search</from-outcome>
+            <from-outcome>loadKonfiguratorSchlauch</from-outcome>
             <to-view-id>
-                /search.xhtml
+                /konfiguratorSchlauch.xhtml
             </to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>shoppingCart</from-outcome>
+            <from-outcome>loadKonfiguratorBewaesserungsSpitze</from-outcome>
             <to-view-id>
-                /shopping_cart.xhtml
+                /konfiguratorBewaesserungsSpitze.xhtml
             </to-view-id>
             <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfKreisInternesReservoir</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfKreisInternesReservoir.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfQuadratInternesReservoir</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfQuadratInternesReservoir.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfRechteckInternesReservoir</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfRechteckInternesReservoir.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfDreieckInternesReservoir</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfDreieckInternesReservoir.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfKreisExterneWasserzufuhr</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfKreisExterneWasserzufuhr.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfQuadratExterneWasserzufuhr</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfQuadratExterneWasserzufuhr.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfRechteckExterneWasserzufuhr</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfRechteckExterneWasserzufuhr.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadKonfiguratorTopfDreieckExterneWasserzufuhr</from-outcome>
+            <to-view-id>
+                /konfiguratorTopfDreieckExterneWasserzufuhr.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadBestellungAusloesenSchritt1</from-outcome>
+            <to-view-id>
+                /bestellungAusloesenSchritt1.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadBestellungAusloesenSchritt2</from-outcome>
+            <to-view-id>
+                /bestellungAusloesenSchritt2.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loadBestellungAusloesenSchritt3</from-outcome>
+            <to-view-id>
+                /bestellungAusloesenSchritt3.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+        <from-outcome>loadBestellungAusloesenSchritt4</from-outcome>
+        <to-view-id>
+            /bestellungAusloesenSchritt4.xhtml
+        </to-view-id>
+        <redirect/>
         </navigation-case>
     </navigation-rule>
     <application>

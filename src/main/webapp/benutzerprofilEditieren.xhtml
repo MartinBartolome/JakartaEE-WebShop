@@ -11,50 +11,120 @@
    <ui:define name="pageTitle"> </ui:define>
    <ui:define name="content">
       <h:form>
-         <div class="form-group">
-            <label for="identifier">Identifier</label>
-            <h:inputText type="number" class="form-control" id="identifier" placeholder="Identifier" value="#{benutzerProfilEditieren.kunde.identifier}"/>
+         <div>
+            <h4>Kunde</h4>
+            <table class="table table-hover">
+               <tr>
+                  <td>Nummer</td>
+                  <td>
+                     <h:inputText readonly="true" type="text" class="form-control" id="nummer" placeholder="Nummer" value="#{benutzerProfilEditieren.kunde.nummer}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Vorname</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{benutzerProfilEditieren.kunde.vorname}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Nachname</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{benutzerProfilEditieren.kunde.name}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>E-Mail</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="email" placeholder="E-Mail Adresse" value="#{benutzerProfilEditieren.kunde.EMailAdresse}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Telefon-Nummer</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="telefonnummer" placeholder="Telefon-Nummer" value="#{benutzerProfilEditieren.kunde.telefonNummer}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Sprache</td>
+                  <td>
+                     <select class="browser-default custom-select">
+                        <ui:repeat value="#{benutzerProfilEditieren.sprachen}" var="item">
+                           <option value="#{item.identifier}">#{item.wert}</option>
+                        </ui:repeat>
+                     </select>
+                     <!-- <option selected="">#{benutzerProfilEditieren.kunde.sprache}</option>-->
+                  </td>
+               </tr>
+            </table>
          </div>
-         <div class="form-group">
-            <label for="nummer">Nummer</label>
-            <h:inputText type="number" class="form-control" id="nummer" placeholder="Nummer" value="#{benutzerProfilEditieren.kunde.nummer}"/>
+         <div>
+            <h4>Addresse</h4>
+            <table class="table table-hover">
+               <tr>
+                  <td>Strasse</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{benutzerProfilEditieren.adresse.strasse}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Postleitzahl</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{benutzerProfilEditieren.adresse.postleitzahl}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Ort</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{benutzerProfilEditieren.adresse.ort}"/>
+                  </td>
+               </tr>
+            </table>
          </div>
-         <div class="form-group">
-            <label for="password">Passwort</label>
-            <h:inputText type="text" class="form-control" id="password" placeholder="Passwort" value="#{benutzerProfilEditieren.kunde.passwort}"/>
+         <div>
+            <h4>Zahlungsart</h4>
+            <table class="table table-hover">
+               <!--
+               <tr>
+                  <td>
+                     <div class="form-check">
+                        <h:input class="form-check-input" type="radio" name="zahlungsart" id="rechnung"/>
+                        <label class="form-check-label" for="rechnung">
+                           Default radio
+                        </label>
+                     </div>
+                     <div class="form-check">
+                        <h:input class="form-check-input" type="radio" name="zahlungsart" id="kreditkarte" checked/>
+                        <label class="form-check-label" for="kreditkarte">
+                           Default checked radio
+                        </label>
+                     </div>
+
+                  </td>
+               </tr>
+               -->
+               <tr>
+                  <td>Nummer Kreditkarte</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="nummer_kreditkarte" value="#{benutzerProfilEditieren.zahlungsArt.nummerKreditkarte}"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Verfall Kreditkarte</td>
+                  <td>
+                     <h:inputText type="text" class="form-control" id="verfall_kreditkarte" placeholder="JJJMM" value="#{benutzerProfilEditieren.zahlungsArt.verfallKreditkarte}"/>
+                  </td>
+               </tr>
+            </table>
          </div>
-         <div class="form-group">
-            <label for="vorname">Vorname</label>
-            <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{benutzerProfilEditieren.kunde.vorname}"/>
-         </div>
-         <div class="form-group">
-            <label for="nachname">Nachname</label>
-            <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{benutzerProfilEditieren.kunde.name}"/>
-         </div>
-         <div class="form-group">
-            <label for="email">E-Mail</label>
-            <h:inputText type="text" class="form-control" id="email" placeholder="E-Mail Adresse" value="#{benutzerProfilEditieren.kunde.EMailAdresse}"/>
-         </div>
-         <div class="form-group">
-            <label for="telefonnummer">Nummer</label>
-            <h:inputText type="text" class="form-control" id="telefonnummer" placeholder="Telefon-Nummer" value="#{benutzerProfilEditieren.kunde.telefonNummer}"/>
-         </div>
-         <select class="browser-default custom-select">
-            <ui:repeat value="#{benutzerProfilEditieren.sprachen}" var="item">
-               <option value="#{item.identifier}">#{item.wert}</option>
-            </ui:repeat>
-         </select>
-         <option selected="">#{benutzerProfilEditieren.kunde.sprache}</option>
-         <div class="form-group">
-            <label for="strasse">Strasse</label>
-            <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{benutzerProfilEditieren.adresse.strasse}"/>
-         </div>
-         <div class="form-group">
+         <div>
             <h:commandButton id="submit" type="submit"
                              styleClass="btn btn-lg btn-primary"
                              action="#{benutzerProfilEditieren.speichern()}" value="Speichern">
             </h:commandButton>
          </div>
+         <br>
+
+         </br>
       </h:form>
    </ui:define>
 </ui:composition>

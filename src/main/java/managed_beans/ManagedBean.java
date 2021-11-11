@@ -22,9 +22,6 @@ import java.util.PropertyResourceBundle;
 public class ManagedBean implements Serializable {
     private static final String PERSISTENCE_UNIT_NAME = "onlineshop";
 
-    @Resource
-    private UserTransaction ut;
-
     @PersistenceContext(unitName = PERSISTENCE_UNIT_NAME)
     protected EntityManager entityManager;
 
@@ -57,9 +54,9 @@ public class ManagedBean implements Serializable {
 
     protected boolean persist(Object entity) {
         try {
-            this.ut.begin();
+            this.userTransation.begin();
             this.entityManager.persist(entity);
-            this.ut.commit();
+            this.userTransation.commit();
         }
         catch (Exception exception) {
             FacesContext.getCurrentInstance().addMessage("ManagedBean.persist", new FacesMessage(exception.getMessage()));

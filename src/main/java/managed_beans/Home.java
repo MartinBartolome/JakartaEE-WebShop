@@ -10,6 +10,10 @@ public class Home  extends ManagedBean {
     private static final long serialVersionUID = 11L;
     private static final Logger logger = Logger.getLogger(Anmelden.class.toString());
 
+    public void initialize() {
+        setSessionValue("Sprache", 3);
+    }
+
     public String getPageAnmelden()
     {
         return "anmelden.xhtml";
