@@ -53,9 +53,12 @@
                     <tr>
                         <td>#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.beschreibungMenge}</td>
                         <td>
-                            <h:inputText onchange="berechneBetrag()" id="menge" type="number" placeholder="1"
+                            <h:inputText valueChangeListener="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.MengeChanged}"
+                                         id="menge" type="number" placeholder="1"
                                          class="form-control"
-                                         value="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.menge}"/>
+                                         value="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.menge}">
+                                <f:ajax execute="menge" render="betrag" event="blur" />
+                             </h:inputText>
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +71,7 @@
                     <tr>
                         <td>#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.beschreibungBetrag}</td>
                         <td>
-                            <h:inputText id="betrag" disabled="true" type="text" class="form-control"
+                            <h:outputText id="betrag" disabled="true" type="text" class="form-control"
                                          value="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.betrag}"/>
                         </td>
                     </tr>
@@ -95,13 +98,6 @@
             </div>
             <br>
             </br>
-            <script>
-                function berechneBetrag() {
-                    let menge = jQuery('#menge').val();
-                    let preisProEinheit = jQuery('#preiseinheit').val();
-                    jQuery('#betrag').val(parseFloat(menge * preisProEinheit).toFixed(2));
-                }
-            </script>
         </h:form>
     </ui:define>
 </ui:composition>

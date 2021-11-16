@@ -1,5 +1,7 @@
 package beans;
 
+import jakarta.faces.event.ValueChangeEvent;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,5 +70,10 @@ public class MerkmaleKalkulation implements IMerkmaleKalkulation {
 
     public float getSteuernSatz() {
         return Float.parseFloat(this.merkmale.get("PSteuern").getWert());
+    }
+    public void MengeChanged(ValueChangeEvent vce) {
+        float menge=Float.parseFloat(vce.getNewValue().toString());
+        float preisproeinheit=Float.parseFloat(getPreisProEinheit());
+        setBetrag(String.valueOf(menge*preisproeinheit));
     }
 }
