@@ -17,31 +17,31 @@
                <tr>
                   <td>Nummer</td>
                   <td>
-                     <h:inputText readonly="true" type="text" class="form-control" id="nummer" placeholder="Nummer" value="#{benutzerProfilEditieren.kunde.nummer}"/>
+                     <h:inputText readonly="true" type="text" class="form-control" id="nummer" placeholder="Nummer" value="#{benutzerProfilEditieren.kunde.kunde.nummer}"/>
                   </td>
                </tr>
                <tr>
                   <td>Vorname</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{benutzerProfilEditieren.kunde.vorname}"/>
+                     <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{benutzerProfilEditieren.kunde.kunde.vorname}"/>
                   </td>
                </tr>
                <tr>
                   <td>Nachname</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{benutzerProfilEditieren.kunde.name}"/>
+                     <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{benutzerProfilEditieren.kunde.kunde.name}"/>
                   </td>
                </tr>
                <tr>
                   <td>E-Mail</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="email" placeholder="E-Mail Adresse" value="#{benutzerProfilEditieren.kunde.EMailAdresse}"/>
+                     <h:inputText type="text" class="form-control" id="email" placeholder="E-Mail Adresse" value="#{benutzerProfilEditieren.kunde.kunde.EMailAdresse}"/>
                   </td>
                </tr>
                <tr>
                   <td>Telefon-Nummer</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="telefonnummer" placeholder="Telefon-Nummer" value="#{benutzerProfilEditieren.kunde.telefonNummer}"/>
+                     <h:inputText type="text" class="form-control" id="telefonnummer" placeholder="Telefon-Nummer" value="#{benutzerProfilEditieren.kunde.kunde.telefonNummer}"/>
                   </td>
                </tr>
                <tr>
@@ -52,7 +52,7 @@
                            <option value="#{item.identifier}">#{item.wert}</option>
                         </ui:repeat>
                      </select>
-                     <!-- <option selected="">#{benutzerProfilEditieren.kunde.sprache}</option>-->
+                     <!--<option selected="">#{benutzerProfilEditieren.kunde.kunde.sprache}</option>-->
                   </td>
                </tr>
             </table>
@@ -63,19 +63,19 @@
                <tr>
                   <td>Strasse</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{benutzerProfilEditieren.adresse.strasse}"/>
+                     <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{benutzerProfilEditieren.kunde.adresse.strasse}"/>
                   </td>
                </tr>
                <tr>
                   <td>Postleitzahl</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{benutzerProfilEditieren.adresse.postleitzahl}"/>
+                     <h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{benutzerProfilEditieren.kunde.adresse.postleitzahl}"/>
                   </td>
                </tr>
                <tr>
                   <td>Ort</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{benutzerProfilEditieren.adresse.ort}"/>
+                     <h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{benutzerProfilEditieren.kunde.adresse.ort}"/>
                   </td>
                </tr>
             </table>
@@ -105,13 +105,13 @@
                <tr>
                   <td>Nummer Kreditkarte</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="nummer_kreditkarte" value="#{benutzerProfilEditieren.zahlungsArt.nummerKreditkarte}"/>
+                     <h:inputText type="text" class="form-control" id="nummer_kreditkarte" value="#{benutzerProfilEditieren.kunde.zahlungsArt.nummerKreditkarte}"/>
                   </td>
                </tr>
                <tr>
                   <td>Verfall Kreditkarte</td>
                   <td>
-                     <h:inputText type="text" class="form-control" id="verfall_kreditkarte" placeholder="JJJMM" value="#{benutzerProfilEditieren.zahlungsArt.verfallKreditkarte}"/>
+                     <h:inputText type="text" class="form-control" id="verfall_kreditkarte" placeholder="JJJMM" value="#{benutzerProfilEditieren.kunde.zahlungsArt.verfallKreditkarte}"/>
                   </td>
                </tr>
             </table>

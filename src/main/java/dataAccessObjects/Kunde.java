@@ -2,6 +2,7 @@ package dataAccessObjects;
 
 import beans.IAnmeldeDaten;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 public class Kunde extends DataAccessObject implements IKunde {
     @Override
@@ -36,11 +37,16 @@ public class Kunde extends DataAccessObject implements IKunde {
 
     @Override
     public beans.IKunde get(int kundeIdentifier) {
-
-
 //        SELECT k.*,a.*,za.* FROM Kunde k INNEr JOIN Adresse a on a.KundeIdentifier=k.Identifier INNER JOIN ZahlungsArt za ON za.KundeIdentifier=k.Identifier
+        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT k,a,za FROM Kunde k INNER JOIN Adresse a on a.identifier=k.identifier INNER JOIN ZahlungsArt za ON za.kundeIdentifier=k.identifier WHERE k.identifier=:Identifier", Object[].class);
+        query.setParameter("Identifier", kundeIdentifier);
+        beans.IKunde kunde = new beans.Kunde();
+        Object[] result = query.getSingleResult();
+        kunde.setKunde((entities.Kunde)result[0]);
+        kunde.setAdresse((entities.Adresse)result[1]);
+        kunde.setZahlungsArt((entities.ZahlungsArt)result[2]);
 
-        return  null;
+        return kunde;
         // To do
     }
 }
