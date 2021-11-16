@@ -91,6 +91,18 @@ public class KonfigurationTopfDreieck extends KonfigurationArtikel {
         public void setLaengeSeiteC(String wert) {
             this.merkmale.getMerkmale().get("KSC").setWert(wert);
         }
+
+        public String getBeschreibungSeiteB() {
+            return this.merkmale.getMerkmale().get("KSB").getBeschreibung();
+        }
+
+        public String getLaengeSeiteB() {
+            return this.merkmale.getMerkmale().get("KSB").getWert();
+        }
+
+        public void setLaengeSeiteB(String wert) {
+            this.merkmale.getMerkmale().get("KSB").setWert(wert);
+        }
     }
 
     private KonfigurationMerkmale konfigurationMerkmale;

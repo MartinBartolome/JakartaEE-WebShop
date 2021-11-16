@@ -20,6 +20,10 @@ public class KonfigurationTopfRechteck extends KonfigurationArtikel {
             this.merkmale.getMerkmale().get("KFarbe").setWert(wert);
         }
 
+        public String getBeschreibungBohrungPositionX() {
+            return this.merkmale.getMerkmale().get("KBX").getBeschreibung();
+        }
+
         public String getBohrungPositionX() {
             return this.merkmale.getMerkmale().get("KBX").getWert();
         }
@@ -74,6 +78,18 @@ public class KonfigurationTopfRechteck extends KonfigurationArtikel {
 
         public void setLaengeSeiteB(String wert) {
             this.merkmale.getMerkmale().get("KSB").setWert(wert);
+        }
+
+        public String getBeschreibungBohrungSeite() {
+            return this.merkmale.getMerkmale().get("KBS").getBeschreibung();
+        }
+
+        public String getBohrungSeite() {
+            return this.merkmale.getMerkmale().get("KBS").getWert();
+        }
+
+        public void setBohrungSeite(String wert) {
+            this.merkmale.getMerkmale().get("KBS").setWert(wert);
         }
     }
 

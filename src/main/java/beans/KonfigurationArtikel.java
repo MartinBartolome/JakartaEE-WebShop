@@ -4,20 +4,20 @@ import java.util.*;
 
 public class KonfigurationArtikel implements IKonfigurationArtikel {
     private String identifier = "";
-    private List<IArtikelMerkmal> merkmaleInformation;
     private IArtikel artikel;
     private Zustand zustand = Zustand.Ungueltig;
+    private IMerkmaleInformation merkmaleInformation;
     private IMerkmaleKalkulation merkmaleKalkulation;
     protected IMerkmaleKonfiguration merkmaleKonfiguration;
 
     public KonfigurationArtikel() {
         this.identifier = UUID.randomUUID().toString();
-        this.merkmaleInformation = new ArrayList<>();
+        this.merkmaleInformation = new MerkmaleInformation();
         this.merkmaleKalkulation = new MerkmaleKalkulation();
         this.merkmaleKonfiguration = new MerkmaleKonfiguration();
     }
 
-    public List<IArtikelMerkmal> getMerkmaleInformation() {
+    public IMerkmaleInformation getMerkmaleInformation() {
         return this.merkmaleInformation;
     }
 

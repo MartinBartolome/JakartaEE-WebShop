@@ -20,16 +20,16 @@ public class KonfigurationTopfQuadrat extends KonfigurationArtikel {
             this.merkmale.getMerkmale().get("KFarbe").setWert(wert);
         }
 
+        public String getBeschreibungBohrungPositionX() {
+            return this.merkmale.getMerkmale().get("KBX").getBeschreibung();
+        }
+
         public String getBohrungPositionX() {
             return this.merkmale.getMerkmale().get("KBX").getWert();
         }
 
         public void setBohrungPositionX(String wert) {
             this.merkmale.getMerkmale().get("KBX").setWert(wert);
-        }
-
-        public String getBeschreibungBohrungPositionY() {
-            return this.merkmale.getMerkmale().get("KBY").getBeschreibung();
         }
 
         public String getBeschreibungHoehe() {
@@ -42,6 +42,10 @@ public class KonfigurationTopfQuadrat extends KonfigurationArtikel {
 
         public void setHoehe(String wert) {
             this.merkmale.getMerkmale().get("KH").setWert(wert);
+        }
+
+        public String getBeschreibungBohrungPositionY() {
+            return this.merkmale.getMerkmale().get("KBY").getBeschreibung();
         }
 
         public String getBohrungPositionY() {

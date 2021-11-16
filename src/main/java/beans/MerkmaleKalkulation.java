@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MerkmaleKalkulation implements IMerkmaleKalkulation {
-    private Map<String, IArtikelMerkmal> merkmale;
+    private Map<String, IMerkmal> merkmale = null;
 
-    public MerkmaleKalkulation() {
-        this.merkmale = new HashMap<>();
+    public void setMerkmale(Map<String, IMerkmal> merkmale) {
+        this.merkmale = merkmale;
     }
 
-    public Map<String, IArtikelMerkmal> getMerkmale() {
+    public Map<String, IMerkmal> getMerkmale() {
         return this.merkmale;
     }
 
@@ -60,5 +60,13 @@ public class MerkmaleKalkulation implements IMerkmaleKalkulation {
 
     public void setVariable(String wert) {
         this.merkmale.get("PVariable").setWert(wert);
+    }
+
+    public float getVersandKostenProEinheit() {
+        return Float.parseFloat(this.merkmale.get("PVersand").getWert());
+    }
+
+    public float getSteuernSatz() {
+        return Float.parseFloat(this.merkmale.get("PSteuern").getWert());
     }
 }

@@ -1,14 +1,12 @@
 package beans;
 
-import java.util.List;
-
 public interface IKonfigurationArtikel {
     enum Zustand {
         Ungueltig,
         Gueltig
     }
 
-    List<IArtikelMerkmal> getMerkmaleInformation();
+    IMerkmaleInformation getMerkmaleInformation();
     IMerkmaleKonfiguration getMerkmaleKonfiguration();
     IMerkmaleKalkulation getMerkmaleKalkulation();
     IArtikel getArtikel();

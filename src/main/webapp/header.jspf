@@ -8,13 +8,13 @@
     <head>
         <meta charset="UTF-8"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../resources/css/styles.css">
+        <link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
         <title><fmt:message key="title"/></title>
     </head>
     <body>
         <nav>
-			<img id="logo" src="img/LasPlontinasLogo.png">
+			<img id="logo" src="../resources/img/LasPlontinasLogo.png">
 			<div class="right-inner-addon input-container">
 				<i class="fa fa-search icon"></i>
 				<input type="text"

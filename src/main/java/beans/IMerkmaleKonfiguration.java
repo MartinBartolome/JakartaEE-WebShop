@@ -3,6 +3,7 @@ package beans;
 import java.util.Map;
 
 public interface IMerkmaleKonfiguration {
-    Map<String, IArtikelMerkmal> getMerkmale();
+    void setMerkmale(Map<String, IMerkmal> merkmale);
+    Map<String, IMerkmal> getMerkmale();
     String getDetails();
 }

@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MerkmaleKonfiguration implements IMerkmaleKonfiguration {
-    protected Map<String, IArtikelMerkmal> merkmale;
+    private Map<String, IMerkmal> merkmale = null;
     protected String details = "";
 
-    public MerkmaleKonfiguration() {
-        this.merkmale = new HashMap<>();
+    public void setMerkmale(Map<String, IMerkmal> merkmale) {
+        this.merkmale = merkmale;
     }
 
-    public Map<String, IArtikelMerkmal> getMerkmale() {
+    public Map<String, IMerkmal> getMerkmale() {
         return this.merkmale;
     }
 

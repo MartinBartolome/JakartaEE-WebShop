@@ -30,8 +30,4 @@ public class Einkaufswagen implements IEinkaufswagen {
     public void artikelLoeschen(String identifier) {
         this.artikel.remove(identifier);
     }
-
-    public String bestellungAusloesen() {
-        return "loadBestellungAusloesenSchritt1";
-    }
 }

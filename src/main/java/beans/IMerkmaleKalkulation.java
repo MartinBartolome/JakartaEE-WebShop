@@ -3,7 +3,8 @@ package beans;
 import java.util.Map;
 
 public interface IMerkmaleKalkulation {
-    Map<String, IArtikelMerkmal> getMerkmale();
+    void setMerkmale(Map<String, IMerkmal> merkmale);
+    Map<String, IMerkmal> getMerkmale();
     String getBeschreibungMenge();
     String getMenge();
     void setMenge(String menge);
@@ -12,4 +13,7 @@ public interface IMerkmaleKalkulation {
     void setPreisProEinheit(String preisProEinheit);
     String getBeschreibungBetrag();
     String getBetrag();
+    void setBetrag(String betrag);
+    float getVersandKostenProEinheit();
+    float getSteuernSatz();
 }
