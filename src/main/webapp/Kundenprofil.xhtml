@@ -1,0 +1,38 @@
+<ui:composition
+        template="/template.xhtml"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="content">
+        <div class="content">
+            <h1><h:outputText value="#{msg['customerdata']}"/></h1>
+            <h:form id="customerprofile"
+                    prependId="false"
+                    enctype="multipart/form-data">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{msg['customernumber']}:"/>
+                    <h:inputText
+                            id="title"
+                            value="#{customerprofileController.customer.nummer}"
+                            styleClass="form-control"/>
+                </h:panelGrid>
+                <h:commandButton
+                        value="TestAbsenden"
+                        action="#{customerprofileController.persist}"
+                        styleClass="btn btn-primary"/>
+            </h:form>
+            <h:form>
+                <h:commandButton
+                        value="Suche alle Benutzer"
+                        action="#{customerprofileController.findAll()}"
+                        styleClass="btn btn-primary"/>
+                <div>Alle Benutzer:</div>
+                <ui:repeat value="#{customerprofileController.gefundeneKunden}" var="customer">
+                    <h:outputText value="#{customer.nummer}"/>
+                </ui:repeat>
+            </h:form>
+
+        </div>
+    </ui:define>
+</ui:composition>

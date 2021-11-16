@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewAction action="#{bestellungAusloesenSchritt2.initialize()}" />
+        </f:metadata>
+    </ui:define>
+    <ui:define name="pageTitle"> </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <h1>Lieferadresse</h1>
+            <table class="table table-hover">
+                <tr>
+                    <td>Vorname</td>
+                    <td>
+                        <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.name}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nachname</td>
+                    <td>
+                        <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.vorname}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Strasse</td>
+                    <td>
+                        <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{bestellungAusloesenSchritt2.bestellung.kunde.adresse.strasse}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Postleitzahl</td>
+                    <td>
+                        <h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{bestellungAusloesenSchritt2.bestellung.kunde.adresse.postleitzahl}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ort</td>
+                    <td>
+                        <h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.adresse.ort}"/>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <h:commandButton id="submit" type="submit"
+                                 styleClass="btn btn-lg btn-primary"
+                                 action="#{bestellungAusloesenSchritt2.schrittBestaetigen()}" value="Weiter">
+                </h:commandButton>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

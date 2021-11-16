@@ -1,0 +1,81 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewAction action="#{home.initialize()}" />
+        </f:metadata>
+    </ui:define>
+    <ui:define name="pageTitle"> </ui:define>
+   <ui:define name="content">
+       <div class="container">
+           <img src="img/home.jpeg" alt="Not found either" class="rounded mx-auto d-block"/>
+       </div>
+       <!-- Editor: https://wordhtml.com/ -->
+       <h3>Über uns</h3>
+       <p>Die Gärtnerei &#171;Las plotinas&#187; wurde 1964 in Glion/Ilanz gegründet und das Motto<em>&#171;ina biala plontina promova tgierp ed olma&#187; </em>wird bis heute gelebt. Getreu diesem Leitbild ist, unser oberstes Anliegen, dass unsere Dientsleitungen und Produkte <em>Sie</em> bei der Pflege Ihrer Pflanzen unterstützen. Denn eine schöne, gesunde Pflanze erfreut <em>Ihre</em> Seele.</p>
+
+       <h3>&#171;La plontina rienta&#187; - Das intelligente Bewässerungssystem</h3>
+       <p>Haben Sie wenig Zeit, reisen Sie oft oder stellen Sie sich beim Umgang mit Pflanzen ungeschickt an und möchten dennoch in Ihrem zu Hause schöne, gesunde Pflanzen haben? Dann ist unser intelligentes Bewässerungssystem für Sie die ideale Lösung.</p>
+       <p>Die Hauptmerkmale:</p>
+       <ul>
+           <li>Bewässerung- und Überwachung via App/Desktop Applikation</li>
+           <li>Zentralisierte, automatische Bewässerung mittels Künstlicher Intelligenz</li>
+           <li>Kabellose Kommunikation zwischen den Steuergeräten</li>
+           <li>Adaptives Schlauchsystem</li>
+           <li>Töpfe mit integrierten Steuergeräten</li>
+       </ul>
+       <h4>Systemübersicht</h4>
+       <p>Die folgende Abbildung gibt eine Schnellübersicht über das System und das Zusammenspiel der Komponenten.</p>
+       <figure>
+           <img src="img/system.png" alt="Not found" width="200" height="200"/>
+           <figcaption>Systemübersicht</figcaption>
+       </figure>
+       <h4>Mobile App</h4>
+       <p>Um dem Benutzer die Verwaltung, die manuelle Bewässerung bzw. Überwachung zu ermöglichen wurde die Applikation für Smartphones entwickelt. Mit der App kann der Benutzer Profile der Pflanzen erstellen, die Art der Bewässerung und/oder eine Bewässerungsplan definieren.</p>
+       <figure>
+           <img src="img/mobileApp.png" alt="Not found" width="200" height="200"/>
+       <figcaption>Mobile App</figcaption>
+       </figure>
+       <h4>Steuergeräte</h4>
+       <p>Der modulare Aufbau des Systems ermöglicht die Kombination für verschiedene Anwendungen:</p>
+       <ul>
+        <li>Steuergerät in Haus/Wohnung, Pumpe im Garten bzw. Balkon</li>
+           <li>Steuergerät und Pumpe im Garten bzw. Balkon</li>
+           <li>Steuergerät in einem Zimmer, Pumpe und Pflanzen in einem anderen Zimmer</li>
+           <li>Steuergerät/Pumpe bewässern bis maximal fünf Bewässerungsspitzen</li>
+       </ul>
+       <div class="container">
+           <figure>
+               <img src="img/kontrolleinheit.png" alt="Not found" width="200" height="200"/>
+               <figcaption>Steuergerät</figcaption>
+           </figure>
+           <figure>
+               <img src="img/pumpeneinheit.png" alt="Not found" width="200" height="200"/>
+               <figcaption>Pumpeneinheit</figcaption>
+           </figure>
+           <figure>
+               <img src="img/bewaesserungsspitze.png" alt="Not found" width="200" height="200"/>
+               <figcaption>Bewässerungsspitze</figcaption>
+           </figure>
+       </div>
+       <h4>Integrierte Lösungen</h4>
+       Die Idee der Integrierten ist die folgende:
+       <ul>
+           <li>Töpfe mit integriertem Reservoir. Der Topf ist doppelwandig. In der Mitte ist die Blumenerde, in welcher die Pflanze ist, drum herum ist der Wa. Der Wassertank muss von Hand befüllt werden und reicht je nach Pflanzenart für mehrere Wochen aus.</li>
+           <li>Töpfe, welche gross sind, können für professionelle Anwender auch mit Direktanschluss versehen werden. Die Wasserversorgung erfolgt somit ab Netz, es ist kein manuelles Befüllen notwendig.</li>
+           <li>In beiden Lösungen befindet sich das Steuergerät sowie die Pumpe im Hohlboden des Topfes.</li>
+       </ul>
+       <figure>
+           <img src="img/topfExterneWasserversorgung.png" alt="Not found" width="200" height="200"/>
+           <figcaption>Externe Wasserversorgung</figcaption>
+       </figure>
+       <figure>
+           <img src="img/topfInternesReservoir.png" alt="Not found" width="200" height="200"/>
+           <figcaption>Interners Reservoir</figcaption>
+       </figure>
+       </ui:define>
+    <h:outputScript src="jsp/home.js"  />
+</ui:composition>
