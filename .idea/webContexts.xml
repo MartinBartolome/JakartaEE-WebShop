@@ -4,6 +4,12 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/Test.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layout" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/template.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layout" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/anmelden.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/benutzerprofil.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/home.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/template.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
       </map>
     </option>
   </component>
