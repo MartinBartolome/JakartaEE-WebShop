@@ -1,0 +1,198 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewAction action="#{konfiguratorTopfRechteckExterneWasserzufuhr.initialize()}"/>
+        </f:metadata>
+    </ui:define>
+    <ui:define name="pageTitle"> </ui:define>
+    <ui:define name="content">
+        <h:form prependId="false">
+            <div class="container-fluid">
+                <h1>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.artikel.beschreibung}</h1>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="img/topfRechteckExterneWasserzufuhr.jpeg" alt="Not found either"
+                             class="rounded mx-auto d-block"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <table class="table">
+                            <tbody>
+                            <ui:repeat
+                                    value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleInformation.merkmale}"
+                                    var="item">
+                                <tr>
+                                    <td>#{item.beschreibung}</td>
+                                    <td>#{item.wert}</td>
+                                </tr>
+                            </ui:repeat>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <h1>Konfiguration</h1>
+                <table class="table table-striped table-hover">
+                    <tbody>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.beschreibungFarbe}</td>
+                        <td>
+                            <input type="color" id="farbe" name="head"
+                                   value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.farbe}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.beschreibungSeiteA}</td>
+                        <td>
+                            <h:selectOneMenu onchange="berechneBetrag()" id="seiteA"
+                                             value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.laengeSeiteA}">
+                                <f:selectItem itemValue="20" itemLabel="20"/>
+                                <f:selectItem itemValue="30" itemLabel="30"/>
+                                <f:selectItem itemValue="40" itemLabel="40"/>
+                                <f:selectItem itemValue="50" itemLabel="50"/>
+                                <f:selectItem itemValue="60" itemLabel="60"/>
+                                <f:selectItem itemValue="70" itemLabel="70"/>
+                                <f:selectItem itemValue="80" itemLabel="80"/>
+                                <f:selectItem itemValue="90" itemLabel="90"/>
+                                <f:selectItem itemValue="100" itemLabel="100"/>
+                                <f:selectItem itemValue="110" itemLabel="110"/>
+                                <f:selectItem itemValue="120" itemLabel="120"/>
+                                <f:selectItem itemValue="130" itemLabel="130"/>
+                                <f:selectItem itemValue="140" itemLabel="140"/>
+                                <f:selectItem itemValue="150" itemLabel="150"/>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.beschreibungSeiteB}</td>
+                        <td>
+                            <h:selectOneMenu onchange="berechneBetrag()" id="seiteB"
+                                             value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.laengeSeiteB}">
+                                <f:selectItem itemValue="20" itemLabel="20"/>
+                                <f:selectItem itemValue="30" itemLabel="30"/>
+                                <f:selectItem itemValue="40" itemLabel="40"/>
+                                <f:selectItem itemValue="50" itemLabel="50"/>
+                                <f:selectItem itemValue="60" itemLabel="60"/>
+                                <f:selectItem itemValue="70" itemLabel="70"/>
+                                <f:selectItem itemValue="80" itemLabel="80"/>
+                                <f:selectItem itemValue="90" itemLabel="90"/>
+                                <f:selectItem itemValue="100" itemLabel="100"/>
+                                <f:selectItem itemValue="110" itemLabel="110"/>
+                                <f:selectItem itemValue="120" itemLabel="120"/>
+                                <f:selectItem itemValue="130" itemLabel="130"/>
+                                <f:selectItem itemValue="140" itemLabel="140"/>
+                                <f:selectItem itemValue="150" itemLabel="150"/>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.beschreibungHoehe}</td>
+                        <td>
+                            <h:selectOneMenu onchange="berechneBetrag()" id="hoehe"
+                                             value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.hoehe}">
+                                <f:selectItem itemValue="10" itemLabel="10"/>
+                                <f:selectItem itemValue="20" itemLabel="20"/>
+                                <f:selectItem itemValue="30" itemLabel="30"/>
+                                <f:selectItem itemValue="40" itemLabel="40"/>
+                                <f:selectItem itemValue="50" itemLabel="50"/>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.beschreibungBohrungSeite}</td>
+                        <td>
+                            <h:selectOneMenu id="seiteborhung"
+                                             value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.bohrungSeite}">
+                                <f:selectItem itemValue="A" itemLabel="A"/>
+                                <f:selectItem itemValue="B" itemLabel="B"/>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.beschreibungBohrungPositionX}</td>
+                        <td>
+                            <h:inputText id="positionX" type="number" placeholder="1" class="form-control"
+                                         value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.bohrungPositionX}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.beschreibungBohrungPositionY}</td>
+                        <td>
+                            <h:inputText id="positionY" type="number" placeholder="1" class="form-control"
+                                         value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.konfigurationMerkmale.bohrungPositionY}"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h1>Bestellung</h1>
+                <table class="table table-striped table-hover">
+                    <tbody>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.beschreibungMenge}</td>
+                        <td>
+                            <h:inputText id="menge" onchange="berechneBetrag()" type="text" placeholder="1"
+                                         class="form-control"
+                                         value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.menge}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.variableBeschreibung}</td>
+                        <td>
+                            <h:inputText it="variable" disabled="true" type="text" placeholder="1" class="form-control"
+                                         value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.variable}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.beschreibungPreiProEinheit}</td>
+                        <td>
+                            <h:inputText id="preiseinheit" disabled="true" type="text" class="form-control"
+                                         value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.preisProEinheit}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.beschreibungBetrag}</td>
+                        <td>
+                            <h:inputText id="betrag" disabled="true" type="text" class="form-control"
+                                         value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.merkmaleKalkulation.betrag}"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h:commandButton id="submit" type="submit"
+                                         styleClass="btn btn-lg btn-primary"
+                                         action="#{konfiguratorTopfRechteckExterneWasserzufuhr.inEinkaufswagenLegen()}"
+                                         value="In Einkaufswagen legen">
+                            <f:param name="ArtikelIdentifier"
+                                     value="#{konfiguratorTopfRechteckExterneWasserzufuhr.artikel.identifier}"/>
+                        </h:commandButton>
+                    </div>
+                    <div class="col-sm-6">
+                        <h:commandButton id="abbrechen" type="submit"
+                                         styleClass="btn btn-lg btn-primary float-right"
+                                         action="#{konfiguratorTopfRechteckExterneWasserzufuhr.konfigurationAbbrechen()}"
+                                         value="Abbrechen">
+                        </h:commandButton>
+                    </div>
+                </div>
+            </div>
+            <br>
+            </br>
+            <script>
+                function berechneBetrag() {
+                    let menge = jQuery('#menge').val();
+                    let seiteA = jQuery('#seiteA').val();
+                    let seiteB = jQuery('#seiteB').val();
+                    let hoehe = jQuery('#hoehe').val();
+                    let preisVariabel = jQuery('#variable').val();
+                    let preisProEinheit = seiteA * seiteB * hoehe * preisVariabel;
+                    jQuery('#preiseinheit').val(parseFloat(preisProEinheit).toFixed(2));
+                    jQuery('#betrag').val(parseFloat(menge * preisProEinheit).toFixed(2));
+                }
+            </script>
+        </h:form>
+    </ui:define>
+</ui:composition>

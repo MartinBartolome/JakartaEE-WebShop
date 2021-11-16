@@ -1,0 +1,59 @@
+<form action="customersafety" method="post">
+    <fieldset>
+        <legend><fmt:message key="security"/>: </legend>
+        <table>
+            <tbody>
+            <tr>
+                <th>
+                    <label for="actualpassword"><fmt:message key="actualpassword"/>:</label>
+                </th>
+                <td>
+                    <input
+                            type="password"
+                            name="actualpassword"
+                            id="actualpassword"
+                            size="40"
+                            maxlength="40"
+                            required="required">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="newpassword">
+                        <fmt:message key="newpassword"/>:
+                    </label>
+                </th>
+                <td>
+                    <input
+                            type="password"
+                            name="newpassword"
+                            id="newpassword"
+                            size="10"
+                            maxlength="10"
+                            title="6-10 Zeichen"
+                            pattern=".{6,10}"
+                            required="required">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="newpasswordrepeat">
+                        <fmt:message key="newpasswordrepeat"/>:
+                    </label>
+                </th>
+                <td>
+                    <input
+                            type="password"
+                            name="newpasswordrepeat"
+                            id="newpasswordrepeat"
+                            size="10"
+                            maxlength="10"
+                            title="6-10 Zeichen"
+                            pattern=".{6,10}"
+                            required="required">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+</form>

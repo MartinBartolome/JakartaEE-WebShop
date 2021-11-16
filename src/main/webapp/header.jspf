@@ -1,0 +1,32 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<fmt:setLocale value="${param.locale}" scope="session"/>
+<fmt:setBundle basename="messages"/>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../resources/css/styles.css">
+        <link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
+        <title><fmt:message key="title"/></title>
+    </head>
+    <body>
+        <nav>
+			<img id="logo" src="../resources/img/LasPlontinasLogo.png">
+			<div class="right-inner-addon input-container">
+				<i class="fa fa-search icon"></i>
+				<input type="text"
+					   class="form-control"
+					   placeholder=<fmt:message key="searchbar"/> />
+			</div>
+			</div>
+			<select id="localization"  onchange="location = this.value;">
+				<option>?</option>
+				<option value="?locale=de_DE">DE</option>
+				<option value="?locale=en_US">EN</option>
+			</select>
+			<button class="navButton"><fmt:message key="account"/></button>
+			<button class="navButton"><fmt:message key="cart"/></button>
+		</nav>

@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <link rel="stylesheet" href="css/header.css"/>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation">
+        <div class="container">
+            <a href="#" class="navbar-brand"><i class="fa fa-cube"></i>Las Plontinas</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+                <form class="navbar-form form-inline">
+                    <div class="input-group search-box">
+                        <input type="text" id="search"  class="form-control" placeholder="Suche nach..."/>
+                        <span class="input-group-addon"><a href=""><i class="material-icons">&#xE8B6;</i></a></span>
+                    </div>
+                </form>
+                <div class="navbar-nav ml-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="sprache" data-toggle="dropdown" aria-expanded="false">
+                            DE
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="sprache">
+                            <a class="dropdown-item" href="#">DE</a>
+                            <a class="dropdown-item" href="#">IT</a>
+                            <a class="dropdown-item" href="#">FR</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="benutzer" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user-o"></i><span> Profil</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="benutzer">
+                            <a href="#{home.pageBenutzerProfilAnlegen}" class="dropdown-item"><i class="fa fa-plus-square-o"></i><span> Neu</span></a>
+                            <a href="#{home.pageBenutzerProfilEditieren}" class="dropdown-item"><i class="fa fa-edit"></i><span> Editieren</span></a>
+                            <a id="menu-item-anmelden" href="#{home.pageAnmelden}" class="dropdown-item"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Anmelden</span></a>
+                            <a id="menu-item-abmelden" href="#{artikelAuswahl.pageAbmelden}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Abmelden</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="nav-link" href="#{artikelAuswahl.pageEinkaufswagen}"><i class="fa fa-shopping-cart fa-lg"></i><span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</ui:composition>
