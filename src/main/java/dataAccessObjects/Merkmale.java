@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Merkmale extends DataAccessObject implements IMerkmale {
     public List<GruppeMerkmal> getSprachen() {
-        Query query = this.entityManager.createQuery("SELECT g FROM GruppeMerkmal g WHERE g.gruppeIdentifier=2");
+        Query query = this.entityManager.createQuery("SELECT g FROM  GruppeMerkmal g WHERE g.gruppeIdentifier=2",GruppeMerkmal.class);
         return query.getResultList();
     }
 

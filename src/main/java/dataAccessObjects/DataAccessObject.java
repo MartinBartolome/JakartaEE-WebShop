@@ -21,9 +21,9 @@ public class DataAccessObject {
 
     protected boolean persist(Object entity) {
         try {
-            this.userTransation.begin();
+            this.entityManager.getTransaction().begin();
             this.entityManager.persist(entity);
-            this.userTransation.commit();
+            this.entityManager.getTransaction().commit();
         }
         catch (Exception exception) {
             FacesContext.getCurrentInstance().addMessage("DataAccessObject.persist", new FacesMessage(exception.getMessage()));

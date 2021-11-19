@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/layout/template.xhtml">
+   <ui:define name="metadata">
+      <f:metadata>
+         <f:viewAction action="#{benutzerProfilController.initialize(true)}" />
+      </f:metadata>
+   </ui:define>
+   <ui:define name="pageTitle"> </ui:define>
+   <ui:define name="content">
+      <h:form>
+         <h4>Kunde</h4>
+         <h:panelGrid columns="2" styleClass="table table-hover">
+            <h:panelGroup>Vorname</h:panelGroup>
+            <h:panelGroup><h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{benutzerProfilController.kunde.kunde.vorname}"/></h:panelGroup>
+            <h:panelGroup>Nachname</h:panelGroup>
+            <h:panelGroup><h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{benutzerProfilController.kunde.kunde.name}"/></h:panelGroup>
+            <h:panelGroup>E-Mail</h:panelGroup>
+            <h:panelGroup><h:inputText type="text" class="form-control" id="email" placeholder="E-Mail Adresse" value="#{benutzerProfilController.kunde.kunde.EMailAdresse}"/></h:panelGroup>
+            <h:panelGroup>Telefon-Nummer</h:panelGroup>
+            <h:panelGroup><h:inputText type="text" class="form-control" id="telefonnummer" placeholder="Telefon-Nummer" value="#{benutzerProfilController.kunde.kunde.telefonNummer}"/></h:panelGroup>
+            <h:panelGroup>Sprache</h:panelGroup>
+            <h:panelGroup>
+               <h:selectOneMenu value="#{benutzerProfilController.kunde.kunde.sprache}">
+                  <f:selectItems value="#{benutzerProfilController.sprachen}" var="s" itemValue="#{s.getIdentifier()}" itemLabel="#{s.getWert()}"></f:selectItems>
+               </h:selectOneMenu>
+            </h:panelGroup>
+         </h:panelGrid>
+         <h4>Addresse</h4>
+         <h:panelGrid columns="2" styleClass="table table-hover">
+            <h:panelGroup>Strasse</h:panelGroup>
+            <h:panelGroup><h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{benutzerProfilController.kunde.adresse.strasse}"/></h:panelGroup>
+            <h:panelGroup>Postleitzahl</h:panelGroup>
+            <h:panelGroup><h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{benutzerProfilController.kunde.adresse.postleitzahl}"/></h:panelGroup>
+            <h:panelGroup>Ort</h:panelGroup>
+            <h:panelGroup><h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{benutzerProfilController.kunde.adresse.ort}"/></h:panelGroup>
+         </h:panelGrid>
+         <h4>Zahlungsart</h4>
+         <h:panelGrid columns="2" styleClass="table table-hover">
+            <h:panelGroup>
+               <h:selectOneRadio value="#{benutzerProfilController.kunde.zahlungsArt.zahlungsArt}">
+                  <f:selectItem itemValue="2" itemLabel="Rechnung" />
+                  <f:selectItem itemValue="7" itemLabel="Kreditkarte" />
+                  <f:ajax render="Kreditkarte"/>
+               </h:selectOneRadio>
+            </h:panelGroup>
+            <h:panelGroup/>
+            <h:panelGroup id="Kreditkarte" layout="block">
+               <h:panelGroup rendered="#{benutzerProfilController.kunde.zahlungsArt.zahlungsArt == 7}">Nummer Kreditkarte</h:panelGroup>
+               <h:panelGroup rendered="#{benutzerProfilController.kunde.zahlungsArt.zahlungsArt == 7}"><h:inputText type="text" class="form-control" id="nummer_kreditkarte" value="#{benutzerProfilController.kunde.zahlungsArt.nummerKreditkarte}"/></h:panelGroup>
+               <h:panelGroup rendered="#{benutzerProfilController.kunde.zahlungsArt.zahlungsArt == 7}">Verfall Kreditkarte</h:panelGroup>
+               <h:panelGroup rendered="#{benutzerProfilController.kunde.zahlungsArt.zahlungsArt == 7}"><h:inputText type="text" class="form-control" id="verfall_kreditkarte" placeholder="JJJMM" value="#{benutzerProfilController.kunde.zahlungsArt.verfallKreditkarte}"/></h:panelGroup>
+            </h:panelGroup>
+        </h:panelGrid>
+            <h:commandButton id="submit" type="submit"
+                             styleClass="btn btn-lg btn-primary"
+                             action="#{benutzerProfilController.speichern}" value=" Speichern">
+            </h:commandButton>
+      </h:form>
+      <br/>
+   </ui:define>
+</ui:composition>

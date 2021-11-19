@@ -7,17 +7,19 @@ import jakarta.persistence.*;
 public class GruppeMerkmal implements IGruppeMerkmal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Identifier")
     private int identifier = 0;
+    @Column(name = "GruppeIdentifier")
     private int gruppeIdentifier = 0;
+    @Column(name = "Schluessel")
     private String schluessel = "";
+    @Column(name = "Wert")
     private String wert = "";
 
-    @Override
     public int getIdentifier() {
         return this.identifier;
     }
 
-    @Override
     public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }

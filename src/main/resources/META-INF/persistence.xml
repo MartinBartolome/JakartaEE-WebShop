@@ -26,9 +26,24 @@
         <class>entities.RechnungPositionMerkmal</class>
     </persistence-unit>
     <persistence-unit name="default">
+        <class>entities.Gruppe</class>
+        <class>entities.GruppeMerkmal</class>
+        <class>entities.GruppeMerkmalBeschreibung</class>
         <class>entities.Kunde</class>
-        <class>entities.Adresse</class>
         <class>entities.ZahlungsArt</class>
+        <class>entities.Adresse</class>
+        <class>entities.Bestellung</class>
+        <class>entities.BestellungPosition</class>
+        <class>entities.Artikel</class>
+        <class>entities.ArtikelMerkmal</class>
+        <class>entities.ArtikelBeschreibung</class>
+        <class>entities.BestellungPositionMerkmal</class>
+        <class>entities.PreisProEinheit</class>
+        <class>entities.Lager</class>
+        <class>entities.Lagerbestand</class>
+        <class>entities.Rechnung</class>
+        <class>entities.RechnungPosition</class>
+        <class>entities.RechnungPositionMerkmal</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/myDB?useSSL=false"/>
