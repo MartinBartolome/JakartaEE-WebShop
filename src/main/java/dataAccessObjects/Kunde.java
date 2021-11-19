@@ -32,7 +32,9 @@ public class Kunde extends DataAccessObject implements IKunde {
 
     @Override
     public void update(beans.IKunde kunde) {
-// Todo
+        super.merge(kunde.getKunde());
+        super.merge(kunde.getAdresse());
+        super.merge(kunde.getZahlungsArt());
     }
 
     @Override

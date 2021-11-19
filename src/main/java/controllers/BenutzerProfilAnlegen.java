@@ -19,6 +19,7 @@ public class BenutzerProfilAnlegen extends ManagedBean {
 
     public BenutzerProfilAnlegen() {
         this.kunde = new beans.Kunde();
+        this.kunde.setKunde(new entities.Kunde());
     }
 
     public void initialize() {

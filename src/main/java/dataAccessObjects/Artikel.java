@@ -1,10 +1,13 @@
 package dataAccessObjects;
 
 import jakarta.persistence.TypedQuery;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Artikel extends DataAccessObject implements IArtikel {
+
     @Override
     public List<beans.IArtikel> get(int sprache)  {
         try {
