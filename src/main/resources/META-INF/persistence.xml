@@ -37,6 +37,7 @@
         <class>entities.Artikel</class>
         <class>entities.ArtikelMerkmal</class>
         <class>entities.ArtikelBeschreibung</class>
+        <class>entities.ArtikelMerkmalBeschreibung</class>
         <class>entities.BestellungPositionMerkmal</class>
         <class>entities.PreisProEinheit</class>
         <class>entities.Lager</class>
