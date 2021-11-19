@@ -1,7 +1,6 @@
 package dataAccessObjects;
 
-public class Bestellung implements IBestellung {
+public class Bestellung extends DataAccessObject implements IBestellung {
     public void insert(beans.Bestellung bestellung) {
-
     }
 }
