@@ -18,5 +18,4 @@ public interface IMerkmaleKalkulation {
     void setBetrag(String betrag);
     float getVersandKostenProEinheit();
     float getSteuernSatz();
-    void MengeChanged(ValueChangeEvent vce);
 }

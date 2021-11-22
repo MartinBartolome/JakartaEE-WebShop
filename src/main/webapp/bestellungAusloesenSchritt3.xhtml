@@ -11,13 +11,27 @@
     <ui:define name="pageTitle"> </ui:define>
     <ui:define name="content">
         <h:form>
-            <h1>Bestellung auslösen: Schritt 3</h1>
-            <div>
+            <h1>Zahlungsart</h1>
+            <h:panelGrid columns="2" styleClass="table table-hover">
+                <h:panelGroup>
+                    <h:selectOneRadio value="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.zahlungsArt}">
+                        <f:selectItem itemValue="2" itemLabel="Rechnung" />
+                        <f:selectItem itemValue="7" itemLabel="Kreditkarte" />
+                        <f:ajax render="Kreditkarte"/>
+                    </h:selectOneRadio>
+                </h:panelGroup>
+                <h:panelGroup/>
+                <h:panelGroup id="Kreditkarte" layout="block">
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.zahlungsArt == 7}">Nummer Kreditkarte</h:panelGroup>
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.zahlungsArt == 7}"><h:inputText type="text" class="form-control" id="nummer_kreditkarte" value="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.nummerKreditkarte}"/></h:panelGroup>
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.zahlungsArt == 7}">Verfall Kreditkarte</h:panelGroup>
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.zahlungsArt == 7}"><h:inputText type="text" class="form-control" id="verfall_kreditkarte" placeholder="JJJMM" value="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.verfallKreditkarte}"/></h:panelGroup>
+                </h:panelGroup>
+            </h:panelGrid>
                 <h:commandButton id="submit" type="submit"
                                  styleClass="btn btn-lg btn-primary"
                                  action="#{bestellungAusloesenSchritt3.schrittBestaetigen()}" value="Weiter">
                 </h:commandButton>
-            </div>
         </h:form>
     </ui:define>
 </ui:composition>

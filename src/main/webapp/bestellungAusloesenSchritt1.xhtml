@@ -12,63 +12,47 @@
     <ui:define name="content">
         <h:form>
             <h1>Bestellpositionen</h1>
-            <table class="table table-striped table-hover border border-dark">
-                <thead>
-                <tr>
-                    <th scope="col">Nummer</th>
-                    <th scope="col">Beschreibung</th>
-                    <th scope="col">Einheit</th>
-                    <th class="text-right" scope="col">Menge</th>
-                    <th class="text-right" scope="col">Preis/Einheit</th>
-                    <th class="text-right" scope="col">Betrag</th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <ui:repeat value="#{bestellungAusloesenSchritt1.bestellung.einkaufswagen.artikel}" var="item">
-                    <tr>
-                        <th scope="row">#{item.artikel.nummer}</th>
-                        <td>#{item.artikel.beschreibung}</td>
-                        <td>#{item.artikel.einheit}</td>
-                        <td class="text-right">#{item.merkmaleKalkulation.menge}</td>
-                        <td class="text-right">#{item.merkmaleKalkulation.preisProEinheit}</td>
-                        <td class="text-right">#{item.merkmaleKalkulation.betrag}</td>
-                    </tr>
-                </ui:repeat>
-                <tr>
-                    <td/>
-                    <td>#{bestellungAusloesenSchritt1.bestellung.kalkulation.beschreibungVersandkosten}</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td class="text-right">#{bestellungAusloesenSchritt1.bestellung.kalkulation.versandkosten}</td>
-                </tr>
-                <tr>
-                    <td/>
-                    <td>#{bestellungAusloesenSchritt1.bestellung.kalkulation.beschreibungSteuern}</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td class="text-right">#{bestellungAusloesenSchritt1.bestellung.kalkulation.steuern}</td>
-                </tr>
-                <tr>
-                    <td/>
-                    <td><b>#{bestellungAusloesenSchritt1.bestellung.kalkulation.beschreibungBetrag}</b></td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td class="text-right"><b>#{bestellungAusloesenSchritt1.bestellung.kalkulation.betrag}</b></td>
-                </tr>
-                </tbody>
-            </table>
-            <div>
-                <h:commandButton id="submit" type="submit"
-                                 styleClass="btn btn-lg btn-primary"
-                                 action="#{bestellungAusloesenSchritt1.schrittBestaetigen()}" value="Weiter">
-                </h:commandButton>
-            </div>
-            <br>
-            </br>
-        </h:form>
-    </ui:define>
-</ui:composition>
+            <h:dataTable value="#{bestellungAusloesenSchritt1.bestellung.einkaufswagen.artikel}" var="item" styleClass="table table-striped table-hover border border-dark">
+                <h:column>
+                    <f:facet name = "header">Nummer</f:facet>
+                    #{item.artikel.nummer}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Beschreibung</f:facet>
+                    #{item.artikel.beschreibung}
+                    <f:facet name="footer">
+                        <h:outputLabel>#{bestellungAusloesenSchritt1.bestellung.kalkulation.beschreibungVersandkosten}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt1.bestellung.kalkulation.beschreibungSteuern}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt1.bestellung.kalkulation.beschreibungBetrag}</h:outputLabel>
+                    </f:facet>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Einheit</f:facet>
+                    #{item.artikel.einheit}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Menge</f:facet>
+                    #{item.merkmaleKalkulation.menge}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Preis/Einheit</f:facet>
+                    #{item.merkmaleKalkulation.preisProEinheit}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Betrag</f:facet>
+                    #{item.merkmaleKalkulation.betrag}
+                    <f:facet name="footer">
+                        <h:outputLabel>#{bestellungAusloesenSchritt1.bestellung.kalkulation.versandkosten}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt1.bestellung.kalkulation.steuern}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt1.bestellung.kalkulation.betrag}</h:outputLabel>
+                    </f:facet>
+                </h:column>
+            </h:dataTable>
+
+            <h:commandButton id="submit" type="submit"
+                             styleClass="btn btn-lg btn-primary"
+                             action="#{bestellungAusloesenSchritt1.schrittBestaetigen()}" value="Weiter">
+            </h:commandButton>
+    </h:form>
+</ui:define>
+        </ui:composition>

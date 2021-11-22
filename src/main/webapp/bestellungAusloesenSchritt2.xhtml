@@ -12,44 +12,28 @@
     <ui:define name="content">
         <h:form>
             <h1>Lieferadresse</h1>
-            <table class="table table-hover">
-                <tr>
-                    <td>Vorname</td>
-                    <td>
-                        <h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.name}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nachname</td>
-                    <td>
-                        <h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.vorname}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Strasse</td>
-                    <td>
-                        <h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{bestellungAusloesenSchritt2.bestellung.kunde.adresse.strasse}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Postleitzahl</td>
-                    <td>
-                        <h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{bestellungAusloesenSchritt2.bestellung.kunde.adresse.postleitzahl}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ort</td>
-                    <td>
-                        <h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.adresse.ort}"/>
-                    </td>
-                </tr>
-            </table>
-            <div>
+            <h:panelGrid columns="2">
+                <h:panelGroup>Vorname</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.name}"/></h:panelGroup>
+
+                <h:panelGroup>Nachname</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{bestellungAusloesenSchritt2.bestellung.kunde.kunde.vorname}"/></h:panelGroup>
+
+                <h:panelGroup>Strasse</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{bestellungAusloesenSchritt2.bestellung.kunde.adresse.strasse}"/></h:panelGroup>
+
+                <h:panelGroup>Postleitzahl</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{bestellungAusloesenSchritt2.bestellung.kunde.adresse.postleitzahl}"/></h:panelGroup>
+
+                <h:panelGroup>Ort</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{bestellungAusloesenSchritt2.bestellung.kunde.adresse.ort}"/></h:panelGroup>
+
+            </h:panelGrid>
                 <h:commandButton id="submit" type="submit"
                                  styleClass="btn btn-lg btn-primary"
                                  action="#{bestellungAusloesenSchritt2.schrittBestaetigen()}" value="Weiter">
                 </h:commandButton>
-            </div>
+
         </h:form>
     </ui:define>
 </ui:composition>

@@ -24,12 +24,12 @@ public class Home  extends ManagedBean {
 
     public String getPageBenutzerProfilAnlegen()
     {
-        return "benutzerprofilAnlegen.xhtml";
+        return "benutzerprofil.xhtml";
     }
 
     public String getPageBenutzerProfilEditieren()
     {
-        return "benutzerprofilEditieren.xhtml";
+        return "benutzerprofil.xhtml";
     }
 
     public String getPageAbmelden() { return "abmelden.xhtml"; }

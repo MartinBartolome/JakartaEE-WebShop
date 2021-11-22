@@ -5,13 +5,11 @@ import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
-import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.UserTransaction;
 
 public class DataAccessObject {
-    private static final String PERSISTENCE_UNIT_NAME = "onlineshop";
+    private static final String PERSISTENCE_UNIT_NAME = "default";
 
-    @PersistenceContext(unitName = PERSISTENCE_UNIT_NAME)
     protected EntityManager entityManager;
 
     protected DataAccessObject() {
@@ -23,9 +21,21 @@ public class DataAccessObject {
 
     protected boolean persist(Object entity) {
         try {
-            this.userTransation.begin();
+            this.entityManager.getTransaction().begin();
             this.entityManager.persist(entity);
-            this.userTransation.commit();
+            this.entityManager.getTransaction().commit();
+        }
+        catch (Exception exception) {
+            FacesContext.getCurrentInstance().addMessage("DataAccessObject.persist", new FacesMessage(exception.getMessage()));
+            return false;
+        }
+        return true;
+    }
+    protected boolean merge(Object entity) {
+        try {
+            this.entityManager.getTransaction().begin();
+            this.entityManager.merge(entity);
+            this.entityManager.getTransaction().commit();
         }
         catch (Exception exception) {
             FacesContext.getCurrentInstance().addMessage("DataAccessObject.persist", new FacesMessage(exception.getMessage()));

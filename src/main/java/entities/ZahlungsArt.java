@@ -12,7 +12,6 @@ public class ZahlungsArt implements IZahlungsArt {
     private int zahlungsArt = 0;
     private String nummerKreditkarte = "";
     private String verfallKreditkarte = "";
-    private String selectedItem = "";
 
     @Override
     public int getIdentifier() {

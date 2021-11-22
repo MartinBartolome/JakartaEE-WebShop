@@ -14,5 +14,4 @@ public class KonfiguratorKontrolleinheit extends KonfiguratorBase {
     public KonfigurationArtikelKontrolleiheit getArtikel() {
         return (KonfigurationArtikelKontrolleiheit)this.artikel;
     }
-
 }

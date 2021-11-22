@@ -75,7 +75,7 @@ CREATE TABLE Bestellung (
                             EmpfaengerNummerKreditkarte VARCHAR(16),
                             EmpfaengerVerfallKreditkarte VARCHAR(8),
                             DatumBestellung INTEGER,
-                            DatumAuslierferung INTEGER,
+                            DatumAuslieferung INTEGER,
                             Zustand VARCHAR(2),
                             PRIMARY KEY(Identifier),
                             FOREIGN KEY(KundeIdentifier) REFERENCES Kunde(Identifier)

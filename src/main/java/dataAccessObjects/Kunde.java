@@ -20,7 +20,7 @@ public class Kunde extends DataAccessObject implements IKunde {
         final long nummer = java.time.Instant.now().getEpochSecond() - 1609459200;
         kunde.getKunde().setNummer(nummer);
         super.persist(kunde.getKunde());
-        Query query = this.entityManager.createQuery("SELECT k FROM Kunde k WHERE k.nummer=:nummer");
+        Query query = this.entityManager.createQuery("SELECT k FROM Kunde k WHERE k.nummer=:nummer", entities.Kunde.class);
         query.setParameter("nummer", nummer);
         final int identifier = ((entities.Kunde)query.getSingleResult()).getIdentifier();
         // Adresse & Zahlungsart
@@ -32,7 +32,9 @@ public class Kunde extends DataAccessObject implements IKunde {
 
     @Override
     public void update(beans.IKunde kunde) {
-// Todo
+        super.merge(kunde.getKunde());
+        super.merge(kunde.getAdresse());
+        super.merge(kunde.getZahlungsArt());
     }
 
     @Override

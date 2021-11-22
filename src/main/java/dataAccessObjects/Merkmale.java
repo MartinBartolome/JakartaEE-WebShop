@@ -12,13 +12,13 @@ import java.util.Map;
 
 public class Merkmale extends DataAccessObject implements IMerkmale {
     public List<GruppeMerkmal> getSprachen() {
-        Query query = this.entityManager.createQuery("SELECT g FROM GruppeMerkmal g WHERE g.gruppeIdentifier=2");
+        Query query = this.entityManager.createQuery("SELECT g FROM  GruppeMerkmal g WHERE g.gruppeIdentifier=2",GruppeMerkmal.class);
         return query.getResultList();
     }
 
     public Map<String, IMerkmal> getMerkmaleFuerKonfiguration(int artikelIdentifier, int sprache)
     {
-        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT am.schluessel,am.wert,amb.beschreibung FROM ArtikelMerkmal am INNER JOIN ArtikelMerkmalBeschreibung amb ON amb.artikelMerkmalIdentifier=am.identifier AND amb.sprache=:sprache WHERE am.artikelIdentifier=:identifier AND am.schluessel LIKE('K%')", Object[].class);
+        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT am.schluessel,am.wert,amb.beschreibung FROM ArtikelMerkmal am INNER JOIN ArtikelMerkmalBeschreibung amb ON amb.artikelMerkmalIdentifier=am.identifier AND amb.sprache=:sprache WHERE am.artikelIdentifier=:identifier AND am.schluessel LIKE 'K%'", Object[].class);
         query.setParameter("identifier", artikelIdentifier);
         query.setParameter("sprache", sprache);
         Map<String, IMerkmal> container = new HashMap<>();
@@ -33,7 +33,7 @@ public class Merkmale extends DataAccessObject implements IMerkmale {
 
     public Map<String, IMerkmal> getMerkmaleFuerKalkulation(int artikelIdentifier, int sprache)
     {
-        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT am.schluessel,am.wert,amb.beschreibung FROM ArtikelMerkmal am INNER JOIN ArtikelMerkmalBeschreibung amb ON amb.artikelMerkmalIdentifier=am.identifier AND amb.sprache=:sprache WHERE am.artikelIdentifier=:identifier AND am.schluessel LIKE('P%')", Object[].class);
+        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT am.schluessel,am.wert,amb.beschreibung FROM ArtikelMerkmal am INNER JOIN ArtikelMerkmalBeschreibung amb ON amb.artikelMerkmalIdentifier=am.identifier AND amb.sprache=:sprache WHERE am.artikelIdentifier=:identifier AND am.schluessel LIKE 'P%'", Object[].class);
         query.setParameter("identifier", artikelIdentifier);
         query.setParameter("sprache", sprache);
         Map<String, IMerkmal> container = new HashMap<>();
@@ -48,7 +48,7 @@ public class Merkmale extends DataAccessObject implements IMerkmale {
 
     public List<IMerkmal> getMerkmaleFuerInformation(int artikelIdentifier, int sprache)
     {
-        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT am.wert,amb.beschreibung FROM ArtikelMerkmal am INNER JOIN ArtikelMerkmalBeschreibung amb ON amb.artikelMerkmalIdentifier=am.identifier AND amb.sprache=:sprache WHERE am.artikelIdentifier=:identifier AND am.schluessel LIKE('I%')", Object[].class);
+        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT am.wert,amb.beschreibung FROM ArtikelMerkmal am INNER JOIN ArtikelMerkmalBeschreibung amb ON amb.artikelMerkmalIdentifier=am.identifier AND amb.sprache=:sprache WHERE am.artikelIdentifier=:identifier AND am.schluessel LIKE 'I%'", Object[].class);
         query.setParameter("identifier", artikelIdentifier);
         query.setParameter("sprache", sprache);
         List<IMerkmal> container = new ArrayList<>();
