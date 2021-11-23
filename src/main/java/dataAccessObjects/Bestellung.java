@@ -1,9 +1,12 @@
 package dataAccessObjects;
 
 import beans.IKonfigurationArtikel;
+import beans.IMerkmal;
 import entities.BestellungPosition;
 import entities.BestellungPositionMerkmal;
 import jakarta.persistence.Query;
+
+import java.util.List;
 
 public class Bestellung extends DataAccessObject implements IBestellung {
     public void insert(beans.Bestellung bestellung) {
@@ -24,21 +27,16 @@ public class Bestellung extends DataAccessObject implements IBestellung {
         this.persist(b);
         int pos = 0;
         for (IKonfigurationArtikel artikel : bestellung.getEinkaufswagen().getArtikel()) {
-            /*
+
             BestellungPosition bp = new BestellungPosition();
-            bp.setBestellungIdentifier(b.getIdentifier());
-            bp.setArtikelIdentifier(Integer.valueOf(artikel.getIdentifier()));
+            bp.setBestellungIdentifier(Integer.valueOf(b.getIdentifier()));
+            bp.setArtikelIdentifier(Integer.valueOf(artikel.getArtikel().getIdentifier()));
             bp.setBeschreibung(artikel.getArtikel().getBeschreibung());
             bp.setArtikelNummer(String.valueOf(artikel.getArtikel().getNummer()));
             bp.setReihenfolge(pos++);
-            bp.setAnzahlEinheiten(Integer.valueOf(artikel.getArtikel().getEinheit()));
+            bp.setAnzahlEinheiten(Integer.valueOf(artikel.getMerkmaleKalkulation().getMenge()));
             bp.setPreisProEinheit(Float.valueOf(artikel.getMerkmaleKalkulation().getPreisProEinheit()));
             this.persist(bp);
-
-            BestellungPositionMerkmal bpm = new BestellungPositionMerkmal();
-            bpm.setBestellungPositionIdentifier(bp.getIdentifier());
-            bpm.setSchluessel();
-            this.persist(bpm);*/
         }
 
     }
