@@ -19,7 +19,7 @@
                 <form class="navbar-form form-inline">
                     <div class="input-group search-box">
                         <input type="text" id="search"  class="form-control" placeholder="Suche nach..."/>
-                        <span class="input-group-addon"><a href=""><i class="material-icons">&#xE8B6;</i></a></span>
+                        <span class="input-group-addon"><a href="artikelAuswahl.xhtml"><i class="material-icons">&#xE8B6;</i></a></span>
                     </div>
                 </form>
                 <div class="navbar-nav ml-auto">
@@ -45,7 +45,11 @@
                         </div>
                     </div>
                     <div>
-                        <a class="nav-link" href="#{artikelAuswahl.pageEinkaufswagen}"><i class="fa fa-shopping-cart fa-lg"></i><span></span></a>
+                        <a class="nav-link" href="#{artikelAuswahl.pageEinkaufswagen}">
+                            <span class="fa-stack has-badge" data-count="#{einkaufswagen.einkaufswagen.artikel.size()}">
+                                <i class="fa fa-shopping-cart fa-lg"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
