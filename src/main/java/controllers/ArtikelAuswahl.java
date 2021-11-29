@@ -17,10 +17,6 @@ public class ArtikelAuswahl extends ManagedBean {
         suchen();
     }
 
-    public String getPageAbmelden() {
-        return "";
-    }
-
     public String getPageEinkaufswagen() {
         return "einkaufswagen.xhtml";
     }

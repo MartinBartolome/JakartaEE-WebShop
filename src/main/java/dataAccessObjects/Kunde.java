@@ -2,6 +2,7 @@ package dataAccessObjects;
 
 import beans.IAnmeldeDaten;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 public class Kunde extends DataAccessObject implements IKunde {
     @Override
@@ -19,28 +20,33 @@ public class Kunde extends DataAccessObject implements IKunde {
         final long nummer = java.time.Instant.now().getEpochSecond() - 1609459200;
         kunde.getKunde().setNummer(nummer);
         super.persist(kunde.getKunde());
-        Query query = this.entityManager.createQuery("SELECT k FROM Kunde k WHERE k.nummer=:nummer");
-        query.setParameter("nummer", nummer);
-        final int identifier = ((entities.Kunde)query.getSingleResult()).getIdentifier();
+
         // Adresse & Zahlungsart
-        kunde.getAdresse().setKundeIdentifier(identifier);
+        kunde.getAdresse().setKundeIdentifier(kunde.getKunde().getIdentifier());
         super.persist(kunde.getAdresse());
-        kunde.getZahlungsArt().setKundeIdentifier(identifier);
+        kunde.getZahlungsArt().setKundeIdentifier(kunde.getKunde().getIdentifier());
         super.persist(kunde.getZahlungsArt());
     }
 
     @Override
     public void update(beans.IKunde kunde) {
-// Todo
+        super.merge(kunde.getKunde());
+        super.merge(kunde.getAdresse());
+        super.merge(kunde.getZahlungsArt());
     }
 
     @Override
     public beans.IKunde get(int kundeIdentifier) {
-
-
 //        SELECT k.*,a.*,za.* FROM Kunde k INNEr JOIN Adresse a on a.KundeIdentifier=k.Identifier INNER JOIN ZahlungsArt za ON za.KundeIdentifier=k.Identifier
+        TypedQuery<Object[]> query = this.entityManager.createQuery("SELECT k,a,za FROM Kunde k INNER JOIN Adresse a on a.identifier=k.identifier INNER JOIN ZahlungsArt za ON za.kundeIdentifier=k.identifier WHERE k.identifier=:Identifier", Object[].class);
+        query.setParameter("Identifier", kundeIdentifier);
+        beans.IKunde kunde = new beans.Kunde();
+        Object[] result = query.getSingleResult();
+        kunde.setKunde((entities.Kunde)result[0]);
+        kunde.setAdresse((entities.Adresse)result[1]);
+        kunde.setZahlungsArt((entities.ZahlungsArt)result[2]);
 
-        return  null;
+        return kunde;
         // To do
     }
 }

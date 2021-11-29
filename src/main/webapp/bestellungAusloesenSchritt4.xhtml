@@ -11,13 +11,76 @@
     <ui:define name="pageTitle"> </ui:define>
     <ui:define name="content">
         <h:form>
-            <h1>Bestellung auslösen: Schritt 4</h1>
-            <div>
-                <h:commandButton id="submit" type="submit"
-                                 styleClass="btn btn-lg btn-primary"
-                                 action="#{bestellungAusloesenSchritt4.schrittBestaetigen()}" value="Weiter">
-                </h:commandButton>
-            </div>
+            <h1>Bestellungsübersicht</h1>
+            <h1>Lieferadresse</h1>
+            <h:panelGrid columns="2">
+                <h:panelGroup>Vorname</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="vorname" placeholder="Vorname" value="#{bestellungAusloesenSchritt4.bestellung.kunde.kunde.name}"/></h:panelGroup>
+
+                <h:panelGroup>Nachname</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="nachname" placeholder="Nachname" value="#{bestellungAusloesenSchritt4.bestellung.kunde.kunde.vorname}"/></h:panelGroup>
+
+                <h:panelGroup>Strasse</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="strasse" placeholder="Strasse" value="#{bestellungAusloesenSchritt4.bestellung.kunde.adresse.strasse}"/></h:panelGroup>
+
+                <h:panelGroup>Postleitzahl</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="postleitzahl" placeholder="Postleitzahl" value="#{bestellungAusloesenSchritt4.bestellung.kunde.adresse.postleitzahl}"/></h:panelGroup>
+
+                <h:panelGroup>Ort</h:panelGroup>
+                <h:panelGroup><h:inputText type="text" class="form-control" id="ort" placeholder="Ort" value="#{bestellungAusloesenSchritt4.bestellung.kunde.adresse.ort}"/></h:panelGroup>
+
+            </h:panelGrid>
+            <h1>Zahlungsart</h1>
+            <h:panelGrid columns="2" styleClass="table table-hover">
+                <h:panelGroup id="Kreditkarte" layout="block">
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt4.bestellung.kunde.zahlungsArt.zahlungsArt == 7}">Nummer Kreditkarte</h:panelGroup>
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt4.bestellung.kunde.zahlungsArt.zahlungsArt == 7}"><h:inputText type="text" class="form-control" id="nummer_kreditkarte" value="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.nummerKreditkarte}"/></h:panelGroup>
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt4.bestellung.kunde.zahlungsArt.zahlungsArt == 7}">Verfall Kreditkarte</h:panelGroup>
+                    <h:panelGroup rendered="#{bestellungAusloesenSchritt4.bestellung.kunde.zahlungsArt.zahlungsArt == 7}"><h:inputText type="text" class="form-control" id="verfall_kreditkarte" placeholder="JJJMM" value="#{bestellungAusloesenSchritt3.bestellung.kunde.zahlungsArt.verfallKreditkarte}"/></h:panelGroup>
+                </h:panelGroup>
+            </h:panelGrid>
+            <h1>Bestellpositionen</h1>
+            <h:dataTable value="#{bestellungAusloesenSchritt4.bestellung.einkaufswagen.artikel}" var="item" styleClass="table table-striped table-hover border border-dark">
+                <h:column>
+                    <f:facet name = "header">Nummer</f:facet>
+                    #{item.artikel.nummer}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Beschreibung</f:facet>
+                    #{item.artikel.beschreibung}
+                    <f:facet name="footer">
+                        <h:outputLabel>#{bestellungAusloesenSchritt4.bestellung.kalkulation.beschreibungVersandkosten}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt4.bestellung.kalkulation.beschreibungSteuern}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt4.bestellung.kalkulation.beschreibungBetrag}</h:outputLabel>
+                    </f:facet>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Einheit</f:facet>
+                    #{item.artikel.einheit}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Menge</f:facet>
+                    #{item.merkmaleKalkulation.menge}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Preis/Einheit</f:facet>
+                    #{item.merkmaleKalkulation.preisProEinheit}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Betrag</f:facet>
+                    #{item.merkmaleKalkulation.betrag}
+                    <f:facet name="footer">
+                        <h:outputLabel>#{bestellungAusloesenSchritt4.bestellung.kalkulation.versandkosten}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt4.bestellung.kalkulation.steuern}</h:outputLabel><br/>
+                        <h:outputLabel>#{bestellungAusloesenSchritt4.bestellung.kalkulation.betrag}</h:outputLabel>
+                    </f:facet>
+                </h:column>
+            </h:dataTable>
+            <h:commandButton id="submit" type="submit"
+                             styleClass="btn btn-lg btn-primary"
+                             action="#{bestellungAusloesenSchritt4.schrittBestaetigen()}" value="Weiter">
+            </h:commandButton>
         </h:form>
+        <br/>
     </ui:define>
 </ui:composition>

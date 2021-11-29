@@ -1,10 +1,16 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewAction action="#{benutzerProfilController.initialize()}" />
+        </f:metadata>
+    </ui:define>
     <link rel="stylesheet" href="css/header.css"/>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation">
         <div class="container">
-            <a href="#" class="navbar-brand"><i class="fa fa-cube"></i>Las Plontinas</a>
+            <a href="#{request.contextPath}" class="navbar-brand"><i class="fa fa-cube"></i>Las Plontinas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -13,7 +19,7 @@
                 <form class="navbar-form form-inline">
                     <div class="input-group search-box">
                         <input type="text" id="search"  class="form-control" placeholder="Suche nach..."/>
-                        <span class="input-group-addon"><a href=""><i class="material-icons">&#xE8B6;</i></a></span>
+                        <span class="input-group-addon"><a href="artikelAuswahl.xhtml"><i class="material-icons">&#xE8B6;</i></a></span>
                     </div>
                 </form>
                 <div class="navbar-nav ml-auto">
@@ -32,14 +38,18 @@
                             <i class="fa fa-user-o"></i><span> Profil</span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="benutzer">
-                            <a href="#{home.pageBenutzerProfilAnlegen}" class="dropdown-item"><i class="fa fa-plus-square-o"></i><span> Neu</span></a>
-                            <a href="#{home.pageBenutzerProfilEditieren}" class="dropdown-item"><i class="fa fa-edit"></i><span> Editieren</span></a>
-                            <a id="menu-item-anmelden" href="#{home.pageAnmelden}" class="dropdown-item"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Anmelden</span></a>
-                            <a id="menu-item-abmelden" href="#{artikelAuswahl.pageAbmelden}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Abmelden</a>
+                            <h:link outcome="#{home.pageBenutzerProfilAnlegen}" rendered="#{home.identifier == 0}" class="dropdown-item"><f:param name = "newUser" value="true"/><i class="fa fa-plus-square-o"></i><span> Neu</span></h:link>
+                            <h:link outcome="#{home.pageBenutzerProfilEditieren}" rendered="#{home.identifier != 0}" class="dropdown-item"><f:param name = "newUser" value="false"/><i class="fa fa-edit"></i><span> Editieren</span></h:link>
+                            <h:link id="menu-item-anmelden" outcome="#{home.pageAnmelden}" rendered="#{home.identifier == 0}"  class="dropdown-item"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Anmelden</span></h:link>
+                            <h:link id="menu-item-abmelden" outcome="#{home.pageAbmelden}" rendered="#{home.identifier != 0}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i><span> Abmelden</span></h:link>
                         </div>
                     </div>
                     <div>
-                        <a class="nav-link" href="#{artikelAuswahl.pageEinkaufswagen}"><i class="fa fa-shopping-cart fa-lg"></i><span></span></a>
+                        <a class="nav-link" href="#{artikelAuswahl.pageEinkaufswagen}">
+                            <span class="fa-stack has-badge" data-count="#{einkaufswagen.einkaufswagen.artikel.size()}">
+                                <i class="fa fa-shopping-cart fa-lg"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>

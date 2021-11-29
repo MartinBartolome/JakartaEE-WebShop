@@ -1,5 +1,7 @@
 package beans;
 
+import jakarta.faces.event.ValueChangeEvent;
+
 import java.util.Map;
 
 public interface IMerkmaleKalkulation {

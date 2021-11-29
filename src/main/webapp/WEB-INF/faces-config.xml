@@ -13,6 +13,13 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
+            <from-outcome>abmelden</from-outcome>
+            <to-view-id>
+                /abmelden.xhtml
+            </to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>loadArtikelAuswahl</from-outcome>
             <to-view-id>
                 /artikelAuswahl.xhtml

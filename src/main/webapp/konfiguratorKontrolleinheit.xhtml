@@ -11,7 +11,7 @@
     <ui:define name="pageTitle"> </ui:define>
     <ui:define name="content">
         <h:form prependId="false">
-            <div class="container-fluid">
+            <div class="container-fluid" id="test">
                 <h1>#{konfiguratorKontrolleinheit.artikel.artikel.beschreibung}</h1>
                 <div class="row">
                     <div class="col-sm-6">
@@ -53,9 +53,13 @@
                     <tr>
                         <td>#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.beschreibungMenge}</td>
                         <td>
-                            <h:inputText onchange="berechneBetrag()" id="menge" type="number" placeholder="1"
+                            <h:inputText valueChangeListener="#{ konfiguratorKontrolleinheit.MengeChanged }"
+                                         id="menge" type="number" placeholder="1"
                                          class="form-control"
-                                         value="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.menge}"/>
+                                         value="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.menge}">
+                                <f:ajax execute="@this" render="betrag" event="change" />
+                                <f:ajax execute="@this" render="submit" event="blur" />
+                             </h:inputText>
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +72,7 @@
                     <tr>
                         <td>#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.beschreibungBetrag}</td>
                         <td>
-                            <h:inputText id="betrag" disabled="true" type="text" class="form-control"
+                            <h:outputText id="betrag" disabled="true" type="text" class="form-control"
                                          value="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.betrag}"/>
                         </td>
                     </tr>
@@ -76,7 +80,7 @@
                 </table>
                 <div class="row">
                     <div class="col-sm-6">
-                        <h:commandButton id="submit" type="submit"
+                        <h:commandButton disabled="#{konfiguratorKontrolleinheit.artikel.merkmaleKalkulation.menge == '0'}" id="submit" type="submit"
                                          styleClass="btn btn-lg btn-primary"
                                          action="#{konfiguratorKontrolleinheit.inEinkaufswagenLegen()}"
                                          value="In Einkaufswagen legen">
@@ -95,13 +99,6 @@
             </div>
             <br>
             </br>
-            <script>
-                function berechneBetrag() {
-                    let menge = jQuery('#menge').val();
-                    let preisProEinheit = jQuery('#preiseinheit').val();
-                    jQuery('#betrag').val(parseFloat(menge * preisProEinheit).toFixed(2));
-                }
-            </script>
         </h:form>
     </ui:define>
 </ui:composition>
